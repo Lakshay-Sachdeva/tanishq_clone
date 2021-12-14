@@ -7,8 +7,8 @@ const router = express.Router() ;
 
 router.post("/" , crudController.post(Product)) ;
 router.get("/" , crudController.getAll(Product)) ;
-router.get("/" , crudController.getOne(Product)) ;
-router.patch("/" , crudController.updateOne(Product)) ;
-router.delete("/" , crudController.deleteOne(Product)) ;
+router.get("/:id" , crudController.getOne(Product)) ;
+router.patch("/:id" , crudController.updateOne(Product)) ;
+router.delete("/:id" , crudController.deleteOne(Product)) ;
 
 module.exports = router ;

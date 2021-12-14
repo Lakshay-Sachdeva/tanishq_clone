@@ -1,17 +1,10 @@
 const express = require('express');
 
-/*controllers
-
-
-*/
+const productController = require("./controllers/product.controller") ;
 
 const app = express();
 app.use(express.json()) ;
 
-/*routes
-
-
-*/
-
+app.use("/products" , productController) ;
 
 module.exports = app ;
