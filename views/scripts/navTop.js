@@ -1,4 +1,4 @@
-import {products} from "../data/data.js"
+import {products} from "../data/data.js.js"
 
 function navTop(){
 

@@ -2,7 +2,7 @@ import { navbar } from 'navbar.js'
 import {footer} from './footer.js'
 import {navTop} from './navTop.js'
 import {navTop2} from './navTop2.js'
-import {debouncing} from '../components/debouncing.js'
+import {debouncing} from '../components/debouncing.js.js'
 
 document.querySelector('nav').innerHTML = navbar()
 document.querySelector('footer').innerHTML = footer();
