@@ -3,6 +3,7 @@ const express = require('express');
 const navbar = require("./views/scripts/navbar");
 
 const productController = require("./controllers/product.controller") ;
+const singleController = require("./controllers/single_product.controller")
 
 const Product = require('./models/product.model') ;
 
@@ -23,6 +24,8 @@ app.get("/Tanishq", async (req, res) => {
         navbar: navbar,
     });
 })
+
+app.get("/single" , singleController)
 
 // product controllers to be placed in other folder for products page
 // app.get("/Tanishq/products", async(req, res) => {
