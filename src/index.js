@@ -1,28 +1,26 @@
-const express = require('express');
+const express = require("express");
 
 const navbar = require("./views/scripts/navbar");
 
-const productController = require("./controllers/product.controller") ;
+const productController = require("./controllers/product.controller");
 
-const Product = require('./models/product.model') ;
+// const Product = require("./models/product.model");
 
 const app = express();
 
-app.use(express.json()) ;
-
+app.use(express.json());
 
 app.set("view engine", "ejs");
 
-app.set("views", "./src/views")
+app.set("views", "./src/views");
 
-app.use("/products" , productController) ;
+app.use("/products", productController);
 
 app.get("/Tanishq", async (req, res) => {
-
-    res.render("index", {
-        navbar: navbar,
-    });
-})
+	res.render("index", {
+		navbar: navbar,
+	});
+});
 
 // product controllers to be placed in other folder for products page
 // app.get("/Tanishq/products", async(req, res) => {
@@ -32,6 +30,4 @@ app.get("/Tanishq", async (req, res) => {
 //     });
 // })
 
-
-
-module.exports = app ;
+module.exports = app;
