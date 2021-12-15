@@ -11,7 +11,6 @@ const app = express();
 app.use(express.json()) ;
 
 app.set("view engine", "ejs");
-app.set("view engine", "ejs");
 
 app.use("/products" , productController) ;
 
