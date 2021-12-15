@@ -25,7 +25,7 @@ app.get("/Tanishq", async (req, res) => {
     });
 })
 
-app.get("/single" , singleController)
+app.use("/single" , singleController)
 
 // product controllers to be placed in other folder for products page
 // app.get("/Tanishq/products", async(req, res) => {

@@ -2,13 +2,13 @@
 
 const express = require('express');
 
-const Product = require('../models/product.model');
-const crudController = require('./crud.controller');
+// const crudController = require('./crud.controller');
 
 const router = express.Router();
-router.get("/", () => {
+router.get("/", (req,res) => {
+    // return res.send("working")
     const product = { name: 'kartik' }
-    router.render("single_product", {
+    res.render("single_product", {
         product
     })
 })
