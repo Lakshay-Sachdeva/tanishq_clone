@@ -12,14 +12,14 @@ app.use(express.json());
 
 app.set("view engine", "ejs");
 
+
 app.set("views", "./src/views");
+app.use(express.static("src/public"));
 
 app.use("/products", productController);
 
 app.get("/Tanishq", async (req, res) => {
-	res.render("index", {
-		navbar: navbar,
-	});
+	res.render("index.ejs");
 });
 
 // product controllers to be placed in other folder for products page
