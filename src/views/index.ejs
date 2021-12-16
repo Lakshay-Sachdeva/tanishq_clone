@@ -10,55 +10,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@200&display=swap" rel="stylesheet">
     <title>Tanishq | Online Gold & Diamond Jewellery Shopping Store</title>
-    <!-- <link rel="stylesheet" href="./views/styles/footer.css"> -->
-    <!-- <link rel="stylesheet" href="./views/styles/home.css"> -->
-    <!-- <link rel="stylesheet" href="./views/styles/navbar.css"> -->
+    <!-- <link rel="stylesheet" href="css/footer.css"> -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home.css">
     <link rel="shortcut icon" href="https://www.tanishq.co.in/favicon.png" type="image/png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    
 </head>
 <body>
-    <nav>
-        <%- navbar() -%>
-    </nav>
-    <video class="" loop autoplay muted playsinline>
-        <source src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/6175a42c-d92e-4c4c-ab26-5ed5b46f2035/15s+banner+-+1278+%281%29+%281%29.mp4?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-6175a42c-d92e-4c4c-ab26-5ed5b46f2035-nSyRqs-">
+    <header id = "navbar"></header>
 
-    </video>
-    
     <div id = "layout">
 
+      <video id="start_vid" loop autoplay muted playsinline>
+        <source src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/6175a42c-d92e-4c4c-ab26-5ed5b46f2035/15s+banner+-+1278+%281%29+%281%29.mp4?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-6175a42c-d92e-4c4c-ab26-5ed5b46f2035-nSyRqs-">
+    </video>
+
+    <!-- shop by category -->
+    <div id = "category_div">
+        <div class = "category_para">
+            <p class = "para">Shop By Category</p>
+        </div>
+        <div id = "category_img">
+            <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/6726ce10-0d7c-4f5f-8078-64ce0282e677/FINGER+RINGS_240x240.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-6726ce10-0d7c-4f5f-8078-64ce0282e677-nO3nzBz" alt="">
+            <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/87bc5b27-9131-4a12-a4a7-9eeda942e7b5/Mangalsutra__240x240.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-87bc5b27-9131-4a12-a4a7-9eeda942e7b5-nO3nETP" alt="">
+            <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/52d947e5-5c09-45e8-b563-82fad0227610/Necklace__240x240.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-52d947e5-5c09-45e8-b563-82fad0227610-nPaYxMz" alt="">
+            <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/8c58b09b-a8e5-4909-ab3c-001188b164ca/Circular_240x240_Chains.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-8c58b09b-a8e5-4909-ab3c-001188b164ca-nO3o0gI" alt="">
+            <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/8dba9266-cb38-462c-a58d-b04e1abaacc1/Bangles_240x240.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-8dba9266-cb38-462c-a58d-b04e1abaacc1-nO3nHPS" alt="">
+            <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/3df1c588-465f-4388-b895-a88ca270527b/See+All_240x240.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-3df1c588-465f-4388-b895-a88ca270527b-nO3nOTF" alt="">
+            <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/3e278b87-3dc5-4ed8-9f63-11aa1d11cbaf/Finger+Rings+3_160+x+160+px.jpg.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-3e278b87-3dc5-4ed8-9f63-11aa1d11cbaf-nPaYtRo" alt="">
+            <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/d9dfbaf4-cb96-4aef-9ce2-5320fe02bb03/Circular+Banners_160x160_Pendants.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-d9dfbaf4-cb96-4aef-9ce2-5320fe02bb03-nO3nxla" alt="">  
+        </div>
+        <div id = "button_layout">
+            <button id="slideLeft" type="button"><p> &#10094; </p></button>
+            <p id = "slide_num">1 / 2</p>
+            <button id="slideRight" type="button"><p> &#10095; </p></button>
+        </div>
+    </div>
+    <div>&nbsp;</div>
         <!-- slidshow -->
         <div>
-            <div id = "slide_div" class="" >
-                <img class="mx-auto" src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/734dcf1e-fbf1-4a11-a498-4115663eac13/desktop/Tanishq_Diwali_Homepage_Blue_Banner_2500x950-min.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-734dcf1e-fbf1-4a11-a498-4115663eac13-desktop-nO3jCQl&impolicy=pqlow" >
-                <img class="" src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/74b57b07-dedf-4b56-b63f-4e26b6043a77/desktop/Tanishq_Home+Page_Banner_2500x950-min+%281%29.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-74b57b07-dedf-4b56-b63f-4e26b6043a77-desktop-nN-lUuq&impolicy=pqlow" >
-                <img class="" src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/b50ed3cd-4990-46f7-a34f-3a461378be3c/desktop/2500x950+%284%29.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-b50ed3cd-4990-46f7-a34f-3a461378be3c-desktop-nN-lYq6&impolicy=pqlow" >
+            <div id = "slide_div" >
+                <img class="mySlides" src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/734dcf1e-fbf1-4a11-a498-4115663eac13/desktop/Tanishq_Diwali_Homepage_Blue_Banner_2500x950-min.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-734dcf1e-fbf1-4a11-a498-4115663eac13-desktop-nO3jCQl&impolicy=pqlow" >
+                <img class="mySlides" src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/74b57b07-dedf-4b56-b63f-4e26b6043a77/desktop/Tanishq_Home+Page_Banner_2500x950-min+%281%29.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-74b57b07-dedf-4b56-b63f-4e26b6043a77-desktop-nN-lUuq&impolicy=pqlow" >
+                <img class="mySlides" src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/b50ed3cd-4990-46f7-a34f-3a461378be3c/desktop/2500x950+%284%29.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-b50ed3cd-4990-46f7-a34f-3a461378be3c-desktop-nN-lYq6&impolicy=pqlow" >
             </div>
         </div>
         <div>&nbsp;</div>
-        <!-- shop by category -->
-        <div id = "category_div">
-            <div class = "category_para">
-                <p class = "para">Shop By Category</p>
-            </div>
-            <div id = "category_img">
-                <img src="https://i.ibb.co/m8NGM8d/Category-circle-160-x-160px.webp" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
-            </div>
-            <div id = "button_layout">
-                <button id="slideLeft" type="button"><p> &#10094; </p></button>
-                <p id = "slide_num">1 / 2</p>
-                <button id="slideRight" type="button"><p> &#10095; </p></button>
-            </div>
-        </div>
-        <div>&nbsp;</div>
+        
 
         <!-- up to 20% off -->
         <div id = "discount_div">
@@ -125,29 +123,6 @@
         <div>&nbsp;</div>
         <div>&nbsp;</div>
 
-        <!-- Tanishq Promices -->
-        <!-- <div id = "promices_div">
-                <div class = "promices_para">
-                    <p class = "promice">Tanishq Promices</p>
-                </div>
-                <div id = "promices_img">
-                    <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/b5d98492-544b-4861-a29b-d6ebf93a3c78/promise1.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-b5d98492-544b-4861-a29b-d6ebf93a3c78-n88qI.O" alt="">
-                    <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/87bc5b27-9131-4a12-a4a7-9eeda942e7b5/Mangalsutra__240x240.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-87bc5b27-9131-4a12-a4a7-9eeda942e7b5-nO3nETP" alt="">
-                    <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/52d947e5-5c09-45e8-b563-82fad0227610/Necklace__240x240.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-52d947e5-5c09-45e8-b563-82fad0227610-nPaYxMz" alt="">
-                    <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/8c58b09b-a8e5-4909-ab3c-001188b164ca/Circular_240x240_Chains.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-8c58b09b-a8e5-4909-ab3c-001188b164ca-nO3o0gI" alt="">
-                    <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/8dba9266-cb38-462c-a58d-b04e1abaacc1/Bangles_240x240.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-8dba9266-cb38-462c-a58d-b04e1abaacc1-nO3nHPS" alt="">
-                    <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/3df1c588-465f-4388-b895-a88ca270527b/See+All_240x240.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-3df1c588-465f-4388-b895-a88ca270527b-nO3nOTF" alt="">
-                    <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/3e278b87-3dc5-4ed8-9f63-11aa1d11cbaf/Finger+Rings+3_160+x+160+px.jpg.jpg?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-3e278b87-3dc5-4ed8-9f63-11aa1d11cbaf-nPaYtRo" alt="">
-                    <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/d9dfbaf4-cb96-4aef-9ce2-5320fe02bb03/Circular+Banners_160x160_Pendants.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-d9dfbaf4-cb96-4aef-9ce2-5320fe02bb03-nO3nxla" alt="">  
-                    <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/d9dfbaf4-cb96-4aef-9ce2-5320fe02bb03/Circular+Banners_160x160_Pendants.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-d9dfbaf4-cb96-4aef-9ce2-5320fe02bb03-nO3nxla" alt=""> 
-                    <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/d9dfbaf4-cb96-4aef-9ce2-5320fe02bb03/Circular+Banners_160x160_Pendants.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-d9dfbaf4-cb96-4aef-9ce2-5320fe02bb03-nO3nxla" alt=""> 
-                </div>
-                <div id = "button_layout">
-                    <button id="slideLeft" type="button"><p> &#10094; </p></button>
-                    <p id = "slide_num">1 / 2</p>
-                    <button id="slideRight" type="button"><p> &#10095; </p></button>
-                </div>
-            </div> -->
 
             <div id = "mithila">
                 <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/eb102358-c221-4793-8cc2-8f95462b7ed9/desktop/TANISHQ+D.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-eb102358-c221-4793-8cc2-8f95462b7ed9-desktop-nNlbyfl" alt="">
@@ -184,12 +159,12 @@
             </div>
     </div>
 
-    <footer>
-
-    </footer>
+    <footer id = "footer"></footer>
     
 </body>
 </html>
 
-<script type="module" src="./views/scripts/home.js"></script>
-
+<script type="module" src="js/index.js"></script>
+<script type="module" src="js/navTop.js"></script>
+<script type="module" src="js/navTop2.js"></script>
+<script type="module" src="js/deboucing.js"></script>
