@@ -8,7 +8,7 @@ const productSchema = new mongoose.Schema(
 		image_url: [{ type: String, required: true }],
 		weight: { type: String, required: true },
 		jewellery_type: { type: String, required: true },
-		product: { type: String, required: true },
+		category: { type: String, required: true },
 		gender: { type: String, required: true },
 		occasion: { type: String, required: true },
         purity: { type: String, required: true },
