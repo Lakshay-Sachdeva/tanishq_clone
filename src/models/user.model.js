@@ -18,13 +18,32 @@ userSchema.pre("save" , function (next){
 
     if(!this.isModified("password")) return next();
 
-    bcrypt.hash("teamTanishq", 10, function(err, hash) {
-        // console.log(hash);
+    // sync approach
+
+    // const hash = bcrypt.hashSync(this.password , 10);
+    // this.password = hash ;
+    // return next();
+
+    // async approach
+
+    bcrypt.hash(this.password , 10 , (err, hash) => {
         this.password = hash ;
-    });
-    
-    return next();
-})
+        return next();
+        
+    }) ;
+}) ;
+
+userSchema.methods.checkPassword = function (password){
+    return new Promise((resolve , reject) => {
+        bcrypt.compare(password, this.password , function(err , same) {
+            if(err) return reject(err) ;
+
+            return resolve(same) ;
+        });
+
+    })
+
+}
 
 
 

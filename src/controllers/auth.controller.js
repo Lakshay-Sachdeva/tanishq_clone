@@ -29,11 +29,36 @@ const register = async (req , res ) => {
 }
 
 
-const login = (req , res ) => {
+const login = async (req , res ) => {
+    try{
+
+        let user = await User.findOne({ email : req.body.email }) ;
 
 
+        if(!user)
+        return res.status(400).json({
+            status : "failed",
+            message : "User doesn't Exist, Please Register with us"
+        }) ;
 
-    return res.status(200).send("Login");
+        const match = await user.checkPassword(req.body.password) ;
+
+        if(!match)
+        return res.status(400).json({
+            status : "failed",
+            message : "Enter Valid Credentials"
+        }) ;
+
+
+        const token = newToken(user)
+
+        return res.status(200).send( { user , token } ) ;
+    }
+    catch(e){
+        return res.status(500).json({ status: "failed" , message : e.message })
+    }
+
+
 }
 
 
