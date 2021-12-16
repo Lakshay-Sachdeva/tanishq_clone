@@ -1,6 +1,5 @@
 const express = require("express");
 
-const navbar = require("./views/scripts/navbar");
 
 const productController = require("./controllers/product.controller");
 
