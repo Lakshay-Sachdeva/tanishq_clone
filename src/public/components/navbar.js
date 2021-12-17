@@ -127,7 +127,7 @@ function navbar() {
                         <div class="row">
                             <div class="column">
                                 <h3>CATEGORY </h3>
-                                <a href="html/products.html">ALL JEWELLERY</a>
+                                <a href="http://127.0.0.1:2424/Tanishq/products">ALL JEWELLERY</a>
                                 <a href="html/products.html" id = "earrings">EARRINGS</a>
                                 <a href="html/products.html" id = "pendants">PENDANTS</a>
                                 <a href="html/products.html" >FINGER RINGS</a>

@@ -1074,13 +1074,17 @@ a {
            
   
     <div id="grid-board">
-        <% product.forEach(function(el){ %>
+        <% product.forEach(function(el){  %>
+
+          <!-- <%  el.onclick = ()=>{
+            windows.location.href = `http://127.0.0.1:2424/single/%{el._id}`
+          } %>  -->
 
         <div id= "proshow">
             <img src= <%= el.image_url[0] %> />
             <p> ₹ <%= el.price %> </p>
             <p> <%= el.name %> </p>
-            <div>QUICK VIEW</div>
+            <div onclick="view('<%= JSON.stringify(el._id)   %>' )">VIEW</div>
         </div>
         <% }) %> 
 
@@ -1111,7 +1115,7 @@ a {
 </body>
 </html>
 
-<script>
+<script type = "module">
     
 import navbar from '../components/navbar'
 
@@ -1125,6 +1129,10 @@ import footer from '../components/footer'
 let footer_section = document.getElementById("footer");
 footer_section.innerHTML = footer();
 
+
+</script>
+<script>
+
 let twotaglh = document.getElementById("twotaglh");
 let twotaghl = document.getElementById("twotaghl");
 
@@ -1134,6 +1142,7 @@ twotaghl.onclick = () => {
 
     showProducts(arr);
 }
+
 
   // sort low to high
 
@@ -1188,6 +1197,11 @@ let arr = data.sort((a, b) => (a.name > b.name ? 1 : -1));
 
 showProducts(arr);
 
+}
+
+function view (sirf) {
+  sirf = JSON.parse(sirf);
+  window.location.href = `http://127.0.0.1:2424/single/${sirf}`
 }
 
 

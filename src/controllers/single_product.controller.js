@@ -8,9 +8,7 @@ const footer = require("../public/scripts/footer");
 
 const router = express.Router();
 router.get("/:id", async (req,res) => {
-    // return res.send("working")
     const product = await Product.findById(req.params.id).lean().exec()
-    // console.log('product',product)
     res.render("single_product", {
         footer,
        
