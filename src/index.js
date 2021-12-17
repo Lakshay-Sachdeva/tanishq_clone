@@ -2,16 +2,9 @@ const express = require('express');
 
 const navbar = require("./public/scripts/navbar");
 
-<<<<<<< Updated upstream
-const productController = require("./controllers/product.controller") ;
-const singleController = require("./controllers/single_product.controller")
-
-const Product = require('./models/product.model') ;
-=======
 const productController = require("./controllers/product.controller");
 const singleController = require("./controllers/single_product.controller")
 // const Product = require("./models/product.model");
->>>>>>> Stashed changes
 
 const app = express();
 
@@ -22,15 +15,11 @@ app.set("view engine", "ejs");
 
 app.set("views", "./src/views")
 
-<<<<<<< Updated upstream
-app.use("/products" , productController) ;
-=======
 app.set("views", "./src/views");
 app.use(express.static("src/public"));
 
 app.use("/products", productController);
 app.use('/single',singleController)
->>>>>>> Stashed changes
 
 app.get("/Tanishq", async (req, res) => {
 
