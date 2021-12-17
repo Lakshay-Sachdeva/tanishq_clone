@@ -3,7 +3,12 @@ const express = require("express");
 const navbar = require("./public/scripts/navbar");
 
 const productController = require("./controllers/product.controller");
+
+const userController = require("./controllers/user.controller") ;
+const { register , login } = require("./controllers/auth.controller") ;
+
 const singleController = require("./controllers/single_product.controller")
+
 
 // const Product = require("./models/product.model");
 
@@ -21,6 +26,9 @@ app.set("views", "./src/views");
 app.use(express.static("src/public"));
 
 app.use("/products", productController);
+app.use("/user" , userController);
+app.use("/register" , register ) ;
+app.use("/login" , login ) ;
 
 app.use('/single',singleController)
 
