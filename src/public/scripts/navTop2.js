@@ -1,4 +1,5 @@
-function navTop2(){
+
+
     let user_l = document.getElementById("user_l");
     let user = JSON.parse(localStorage.getItem("user"));
     if(user == null){
@@ -33,10 +34,3 @@ function navTop2(){
             sel_cur.style.display = "none"
            }
         }
-
-       
-       
-
-}
-
-export {navTop2}

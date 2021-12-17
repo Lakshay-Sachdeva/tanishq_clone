@@ -1,8 +1,5 @@
-import {products} from "../data/data.js.js.js"
 
-function navTop(){
-
-    
+// import {products} from "../data/data.js"
 
     let select = document.getElementById("currency")
         let sel_cur = document.getElementById("sel_curr")
@@ -31,35 +28,6 @@ function navTop(){
         }
         
 
-        // let cart_page = document.getElementById('cart-page')
-        // console.log(cart_page);
-
-        // cart_page.onclick = ()=> {
-
-        //     console.log('hello');
-        //     alert();
-        //     window.location.href = '../html/cart.html';
-        // }
-
-
-        
-    
-    
-    // document.getElementById("currency").onclick = () => {
-    //     let select = document.getElementById("sel_cur")
-    //     ind++;
-    //     select.style.display = "block"
-        // if(ind == 1){
-        //     select.style.display = "block";
-        //     ind = 0;
-        // }
-    //}
-
-
-    
-    console.log(products);
-
-    
 
     if(localStorage.getItem("specific_category") == null){
         localStorage.setItem("specific_category", JSON.stringify([]));
@@ -153,31 +121,6 @@ function navTop(){
         }
     }
 
-    //me_search mediaquery
-
-    // let me_search = document.getElementById("me_search");
-    // let search_divv = document.getElementById("search_div");
-    // me_search.onclick = () =>{
-    //     console.log(me_search);
-    //     if(search_divv.style.display == "none"){
-    //         search_divv.style.display = "block";
-    //     } else {
-    //         search_divv.style.display = "none";
-    //     }
-    // }
     
-    
-}
-
-
- 
-
-
-
-
-
-export {navTop};
    
-    
-    
    
