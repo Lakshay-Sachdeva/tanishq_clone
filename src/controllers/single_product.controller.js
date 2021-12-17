@@ -2,7 +2,11 @@ const express = require('express');
 // const crudController = require('./crud.controller');
 
 const Product = require("../models/product.model")
+<<<<<<< Updated upstream
 const footer = require("../public/scripts/footer");
+=======
+// const footer = require("../views/scripts/footer");
+>>>>>>> Stashed changes
 
 
 const router = express.Router();
@@ -11,7 +15,11 @@ router.get("/:id", async (req,res) => {
     const product = await Product.findById(req.params.id).lean().exec()
     // console.log('product',product)
     res.render("single_product", {
+<<<<<<< Updated upstream
         footer,
+=======
+       
+>>>>>>> Stashed changes
         product
     })
 })
