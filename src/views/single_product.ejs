@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< Updated upstream
+    <title>Buy <%= product.purity[0]%><%= product.purity[1]%>KT Yellow Gold <%= product.category %><%= product.name %></title>
+=======
+    <title>Buy <%= product.purity[0]%><%= product.purity[1]%>KT Yellow Gold <%= product.category %><%= product.name %>
+    </title>
+>>>>>>> Stashed changes
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@200&display=swap"
+        rel="stylesheet">
+
+    <link rel="shortcut icon" href="https://www.tanishq.co.in/favicon.png" type="image/png">
+<<<<<<< Updated upstream
+    <link rel="stylesheet" href="scripts/s.css">
+=======
+    <!-- <link rel="stylesheet" href="scripts/s.css"> -->
+>>>>>>> Stashed changes
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<html>
+
+<body>
+    <nav>
+<<<<<<< Updated upstream
+        <!-- <%- footer() -%> -->
+=======
+
+>>>>>>> Stashed changes
+    </nav>
+
+    <body class="w-11/12 border-red-500 m-auto">
+        <div class="text-xs m-2 border border-red-500"> <a class="text-stone-400" href="#">Home</a> > PRODUCT > <%=
+                product.name%>
+        </div>
+        <div class="grid grid-cols-2 gap-4 m-2">
+            <!-- left div -->
+            <div class='border border-green-700'>
+<<<<<<< Updated upstream
+                <div >
+=======
+                <div>
+>>>>>>> Stashed changes
+                    <img id="main_img" class='h-auto w-3/4 ml-8 mt-4' src=<%=product.image_url[0] %>
+                    alt="">
+
+                </div>
+                <div class="flex ml-6 gap-12 text-base mb-8">
+                    <div class="underline text-sm">CLICK TO ZOOM</div>
+                    <button class="bg-black text-white px-10">TRY IT ON</button>
+                </div>
+                <div class="flex gap-8 m-2">
+                    <div class="mt-6 ml-4 cursor-pointer">⧼</div>
+<<<<<<< Updated upstream
+                    <img id="img_0" onclick="img_click(`<%= JSON.stringify(product.image_url) %>`,0)"
+                        class="w-20 border border-black cursor-pointer" src=<%=product.image_url[0] %> alt="">
+
+                    <img id="img_1" onclick="img_click(`<%= JSON.stringify(product.image_url) %>`,1)"
+                        class="w-20 border cursor-pointer" src=<%=product.image_url[1] %> alt="">
+
+                    <img id="img_2" onclick="img_click(`<%= JSON.stringify(product.image_url) %>`,2)"
+                        class="w-20 border cursor-pointer" src=<%=product.image_url[2] %> alt="">
+                        <div class="mt-6 cursor-pointer">⦒</div>
+=======
+                    <img id="img_0" onclick="abc(`<%= JSON.stringify(product.image_url) %>`,0)"
+                        class="w-20 border border-black cursor-pointer" src=<%=product.image_url[0] %> alt="">
+
+                    <img id="img_1" onclick="abc(`<%= JSON.stringify(product.image_url) %>`,1)"
+                        class="w-20 border cursor-pointer" src=<%=product.image_url[1] %> alt="">
+
+                    <img id="img_2" onclick="abc(`<%= JSON.stringify(product.image_url) %>`,2)"
+                        class="w-20 border cursor-pointer" src=<%=product.image_url[2] %> alt="">
+                    <div class="mt-6 cursor-pointer">⦒</div>
+>>>>>>> Stashed changes
+                </div>
+            </div>
+            <!-- right div -->
+            <div class='border border-red-700'>
+                <div class="border border-red-500 m-2 grid grid-cols-2 ">
+                    <div class="text-sm">
+                        <%= product._id %>
+                    </div>
+                    <div class="text-right text-sm">☆☆☆☆☆ Write a review</div>
+                </div>
+<<<<<<< Updated upstream
+             <div class="flex gap-2">
+                 <div class="border border-black w-4/5">
+                    <div class="text-2xl">
+                        <%= product.name %>
+                    </div>
+                    <div class="text-xl font-bold">PRICE ₹ <%= product.price %>
+                    </div>
+                    <div class="grid grid-cols-2 m-2">
+                        <div class="text-sm text-stone-500">(Incl. of all taxes)</div>
+                        <div class="underline text-sm text-yellow-300">Price Breakup</div>
+                    </div>
+                    <div class="text-xs text-stone-500 my-2 ">*Weight and Price may vary subject to the stock available.</div>
+                    <button class="bg-yellow-500 text-white text-sm m-2">TRY ON AVAILABLE</button>
+                    <div class=" m-2">
+                        <%= product.description %>
+                    </div>
+                    <div class=" m-2 underline text-sm text-yellow-300" >Product Details</div>
+                    <div class="flex m-2">
+                        <div>
+                            <div>Gross Weight</div>
+                            <button class="border border-black w-72 h-12"><%= product.weight %>g</button>
+
+                        </div>
+                        <div class="w-1/4 ml-10">
+                            <div class="text-center">Net Qty</div>
+                            <div class="h-12 mx-1">— <button class="border w-14 border-black h-12">1 N</button> +</div>
+                        </div>
+                    </div>
+                    <div class="mx-2 my-6">
+                        <button class="bg-black text-white px-14 h-10">ADD TO CART</button>
+                        <button class="border border-black h-10">BOOK AN APPOINTEMENT</button>
+                    </div>
+                    <div class="text-xs ml-6">✔ ONLY 1 LEFT IN STOCK</div>
+                   
+                 </div>
+                 <div  class="border border-green-700 w-1/5">div resrve for icons</div>
+             </div>
+             <div class="bg-slate-200 mx-2 mt-4">
+                <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/1018d041-8048-466a-9cbd-4175282d71a9/desktop/2nd-scroll-dt-all.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-1018d041-8048-466a-9cbd-4175282d71a9-desktop-nODZ0Q8" alt="">
+            </div>
+=======
+                <div class="flex gap-2">
+                    <div class="border border-black w-4/5">
+                        <div class="text-2xl">
+                            <%= product.name %>
+                        </div>
+                        <div class="text-xl font-bold">PRICE ₹ <%= product.price %>
+                        </div>
+                        <div class="grid grid-cols-2 m-2">
+                            <div class="text-sm text-stone-500">(Incl. of all taxes)</div>
+                            <div class="underline text-sm text-yellow-300">Price Breakup</div>
+                        </div>
+                        <div class="text-xs text-stone-500 my-2 ">*Weight and Price may vary subject to the stock
+                            available.</div>
+                        <button class="bg-yellow-500 text-white text-sm m-2">TRY ON AVAILABLE</button>
+                        <div class=" m-2">
+                            <%= product.description %>
+                        </div>
+                        <div class=" m-2 underline text-sm text-yellow-300">Product Details</div>
+                        <div class="flex m-2">
+                            <div>
+                                <div>Gross Weight</div>
+                                <button class="border border-black w-72 h-12">
+                                    <%= product.weight %>g
+                                </button>
+
+                            </div>
+                            <div class="w-1/4 ml-10">
+                                <div class="text-center">Net Qty</div>
+                                <div class="h-12 mx-1">— <button class="border w-14 border-black h-12">1 N</button> +
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-2 my-6">
+                            <button onclick="add_to_cart('<%= JSON.stringify(product._id)   %>' )"
+                                class="bg-black text-white px-14 h-10">ADD TO CART</button>
+                            <button class="border border-black h-10">BOOK AN APPOINTEMENT</button>
+                        </div>
+                        <div class="text-xs ml-6">✔ ONLY 1 LEFT IN STOCK</div>
+
+                    </div>
+                    <div class="border border-green-700 w-1/5">div resrve for icons</div>
+                </div>
+                <div class="bg-slate-200 mx-2 mt-4">
+                    <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/1018d041-8048-466a-9cbd-4175282d71a9/desktop/2nd-scroll-dt-all.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-1018d041-8048-466a-9cbd-4175282d71a9-desktop-nODZ0Q8"
+                        alt="">
+                </div>
+>>>>>>> Stashed changes
+
+            </div>
+        </div>
+    </body>
+
+</body>
+
+</html>
+<<<<<<< Updated upstream
+<script type="module" src="scripts/single_product.js">
+   
+</script>
+<!-- <script type="module" src="js/deboucing.js"></script> -->
+=======
+<script>
+    const abc = (image, num) => {
+        const img_0 = document.getElementById("img_0")
+        const img_1 = document.getElementById("img_1")
+        const img_2 = document.getElementById("img_2")
+
+        if (num == 1) {
+            img_1.setAttribute("class", "w-20 border border-black")
+            img_0.setAttribute("class", "w-20 border")
+            img_2.setAttribute("class", "w-20 border")
+        } else if (num == 2) {
+            img_2.setAttribute("class", "w-20 border border-black")
+            img_0.setAttribute("class", "w-20 border")
+            img_1.setAttribute("class", "w-20 border")
+        } else {
+            img_0.setAttribute("class", "w-20 border border-black")
+            img_2.setAttribute("class", "w-20 border")
+            img_1.setAttribute("class", "w-20 border")
+        }
+
+        const new_img = JSON.parse(image)
+
+        const main_img = document.getElementById("main_img")
+        main_img.src = new_img[num]
+    }
+
+    const add_to_cart = (id) => {
+        console.log("click")
+        const new_id = JSON.parse(id)
+        console.log(id)
+        console.log(new_id)
+
+
+
+        if (localStorage.getItem("cart") == null) {
+            // console.log("null")
+            localStorage.setItem("cart", JSON.stringify([]))
+        }
+        let cart = localStorage.getItem("cart")
+        let new_cart = JSON.parse(cart)
+
+        let flag = "no"
+        new_cart.forEach((product) => {
+            console.log("p", product)
+            if (product === new_id) {
+                flag = "yes"
+            }
+        })
+
+        if (flag === "yes") {
+            alert("already in cart")
+        }
+        else {
+
+            new_cart.push(new_id)
+
+            localStorage.setItem("cart", JSON.stringify(new_cart))
+            alert("product is added cart")
+        }
+
+
+
+
+
+    }
+</script>
+>>>>>>> Stashed changes
