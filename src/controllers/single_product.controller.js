@@ -2,7 +2,7 @@ const express = require('express');
 // const crudController = require('./crud.controller');
 
 const Product = require("../models/product.model")
-const footer = require("../views/scripts/footer");
+const footer = require("../public/scripts/footer");
 
 
 const router = express.Router();
