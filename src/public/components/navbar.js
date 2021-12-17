@@ -101,19 +101,19 @@ function navbar() {
         </div>
         
         <div>
-            <a href="login.html" id = "user_l">LOGIN</a>
+            <a href="http://127.0.0.1:2424/Tanishq/login" id = "user_l">LOGIN</a>
             <a href="#">ENCIRCLE</a>
             <a href="#">GOLDEN HARVEST</a>
             <a href="">BOOK AN APPOINTMENT</a>
             <a href="">WISHLIST</a>
-            <a href="../html/cart.html">CART</a>
+            <a href="http://127.0.0.1:2424/cart">CART</a>
         </div>
     
     </div>
     
     <div id="div2">
 
-    <a href="../index.html"><img id="logo" src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/cb53f671-01d0-449e-b18d-a4e61e6ffa0b/TanishqLogo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-cb53f671-01d0-449e-b18d-a4e61e6ffa0b-mC036IT" alt=""></a>
+    <a href="http://127.0.0.1:2424/Tanishq"><img id="logo" src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/cb53f671-01d0-449e-b18d-a4e61e6ffa0b/TanishqLogo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-cb53f671-01d0-449e-b18d-a4e61e6ffa0b-mC036IT" alt=""></a>
 
         <ul id="topnav2" class="top ulnav" >
 
