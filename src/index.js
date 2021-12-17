@@ -1,37 +1,65 @@
-const express = require('express');
+const express = require("express");
 
-<<<<<<< Updated upstream
-=======
-const navbar = require("./views/scripts/navbar");
 
-const footer = require("./views/scripts/footer");
+/////////////////   Controllers    //////////////////////
+const productController = require("./controllers/product.controller");
 
->>>>>>> Stashed changes
-const productController = require("./controllers/product.controller") ;
+const userController = require("./controllers/user.controller") ;
+
+
+const { register , login } = require("./controllers/auth.controller") ;
+
+const singleController = require("./controllers/single_product.controller")
+
+
+/////////////////   Models   ///////////////////////
+const Products = require("./models/product.model");
+
+const navbar = require("./public/scripts/navbar");
 
 const app = express();
+
+
 app.use(express.json()) ;
 
-app.use("/products" , productController) ;
+app.use(express.static("src/public"))
 
-<<<<<<< Updated upstream
-=======
+app.set("view engine", "ejs");
+
+
+app.set("views", "./src/views");
+app.use(express.static("src/public"));
+
+app.use("/products", productController);
+app.use("/user" , userController);
+app.use("/register" , register ) ;
+app.use("/login" , login ) ;
+
+app.use('/single',singleController)
+
+
 app.get("/Tanishq", async (req, res) => {
+	res.render("index");
+});
 
-    res.render("../index", {
-        navbar: navbar,
-        footer: footer,
-    });
+app.get("/Tanishq/login", async (req, res) => {
+	res.render("login.ejs");
+});
+
+app.get("/Tanishq/signup", async (req, res) => {
+	res.render("signup.ejs");
+});
+
+
+app.get("/Tanishq/products", async (req, res) => {
+    const Product = await Products.find().lean().exec();
+    res.render("products", {
+		Product: Product
+	})
 })
 
-app.get("/Tanishq/products", async(req, res) => {
-    const product_data = await Product.find().lean().exec();
-    res.render("products_page", {
-        product_data: product_data,
-    });
-})
+app.use("/single" , singleController)
 
 
+module.exports = app;
 
->>>>>>> Stashed changes
-module.exports = app ;
