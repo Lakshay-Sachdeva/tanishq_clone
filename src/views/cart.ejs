@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>high</title>
+ 
+    <!-- <link rel="stylesheet" href="/styles/navbar.css">
+    <link rel="stylesheet" href="/styles/footer.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="styles/cart.css" /> -->
+    <link rel="shortcut icon" href="https://www.tanishq.co.in/favicon.png" type="image/png">
+
+
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <!-- font-family: "Fira Sans", sans-serif; -->
+  </head>
+    <style>
+      #empty_cart {
+    display: none;
+}
+#headings {
+    display: grid;
+    grid-template-columns: 70% 20% 10%; 
+    margin: 10px;
+}
+#parent > div {
+
+
+    display: grid;
+    grid-template-columns: 70% 20% 10%;
+    margin : 10px;
+    border-top: 1px solid #DDDDDD;
+}
+#parent > div > div {
+    margin-top : 10px;
+}
+.image {
+    width : 30% ;
+}
+
+#checkout_btns {
+    display : flex;
+    flex-direction: column;
+  
+}
+/* 123 */
+button {
+    cursor : pointer;
+}
+
+#cart_main {
+    display : grid ;
+    grid-template-columns: 64% 30%;
+    grid-gap: 3%;
+}
+/*
+ position: sticky ;
+    top :10px;
+    position sticky is used for order summary div scroll inside cart main div 
+*/
+#order_summray {
+    /* border : 2px dashed red; */
+    height : 500px;
+
+    
+    position: sticky ;
+    top :0px;
+}
+
+#order_summray > h2{
+    font-size : 28px;
+    margin-top : 0px;
+    text-decoration : none solid rgb(0,0,0);
+    font-family : 'Playfair Display', sans-serif;
+    font-weight : 400;
+}
+.items_div{
+    display : grid;
+    grid-template-columns: 30% 50%;
+    grid-gap: 8%;
+    /* justify-content: left; */
+    /* width : 50%; */
+    /* border : 3px solid black !important; */
+}
+.image {
+    width : 160px;
+}
+#count{
+    font-size : 28px;
+    font-family :  "Playfair Display", sans-serif;
+    font-weight : 300;
+    padding : 10px 0;
+}
+.quantity {
+    color: black;
+    display : inline-block;
+    border : 1px solid black;
+     /* width : 15px;
+ /*   height : 30px;  */
+    padding: 5px 10px; 
+    /* padding-left : 10px; */
+    font-size: 18px;
+}
+.signs {
+    display : inline-block;
+    color : gray;
+    margin : 5px 10px ;
+    /* border : 1px dashed black;   */
+    font-size: 30px;
+    cursor : pointer;
+}
+.signs:hover {
+    color : black;
+}
+/* .quan {
+    margin-top : 10px;
+} */
+.name {
+    font-size : 18px;
+    font-weight : 800;
+    margin: 15px 0 5px 0;
+}
+#headings {
+    font-size : 18px;
+}
+#quick_nav {
+   font-size : 14px;
+   margin-bottom : 10px;
+   padding : 5px 2px;
+}
+#inside_quick_nav{
+    color : gray;
+  
+}
+#inside_quick_nav:hover {
+    color : rgb(66, 64, 64);
+    text-decoration: underline;
+}
+#cart_main_div {
+    width : 98%;
+    margin : 10px auto;
+    margin-top: 120px;
+}
+
+#btn-1{
+    border : 1px solid black;
+    background : black;
+    color : white;
+    margin-top: 30px ;
+    margin-bottom: 15px;
+    padding: 10px 0 ;
+    width : 100%;
+    height : 50px;
+    
+}
+#btn-2 {
+   margin-left : 30%; 
+   background : transparent;
+   border : none;
+   border-bottom: 1px solid black;
+   font-family: "Raleway", sans-serif;
+   font-size: 14px;
+   font-weight: 800;
+}
+#promocode_btns > button{
+  padding : 19px 10px 15px 10px ;
+  font-size : 15px;
+  background : transparent ;
+  font-family : 'Playfair Display', sans-serif;
+}
+#promocode_btns > button:first-child {
+    border : 1px solid #DDDDDD;
+    border-bottom: 1px solid #FFFFFF;
+}
+#promocode_btns > button:last-child {
+    margin-left : -5px; 
+    border : 1px solid #FFFFFF ;
+    border-bottom : 1px solid #DDDDDD ;
+    border-left :    none ; 
+    color : #8C8C8C;
+}
+#promocode_btns > button:last-child:hover {
+    background-color : #EEEEEE;
+}
+
+#promocode_btns {
+    margin-bottom: 15px;
+}
+#input-box {
+    padding : 20px 12px 20px 0;
+    /* border : 1px dashed black ; */
+    display : flex ;
+}
+#input-box > input {
+    flex-grow: 2;
+    background: #F6F6F6;
+    outline : none;
+    border : none;
+    height : 50px;
+    font-size : 16px;
+    box-sizing: border-box ;
+}
+#input-box > input:focus {
+    border : 1px solid black;
+    border-right: none;
+    box-sizing: border-box ;
+}
+#input-box > button {
+    background : black;
+    color : white;
+    padding : 15px 12px;
+    font-size: 12px;
+    border: 1px solid black;
+    width  : 25%;
+
+}
+.bold {
+    font-family: "Roboto", sans-serif ;
+    font-size: 18px;
+    font-weight: 700 ;
+}
+.extra-bold {
+font-family: "Roboto", sans-serif;
+font-size: 24px;
+font-weight: 700;
+}
+table + div {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+ td{
+    /* border: 1px solid black; */
+    padding-bottom: 10px;
+}
+.font-size {
+    font-family: "Roboto", sans-serif ;
+    font-size: 18px;
+}
+#empty-cart-btn {
+margin-left: 10px;
+width : 22%;
+height : 50px;
+font-size : 16px;
+color : white;
+background: black;
+border : none;
+}
+#empty_cart > div:first-child {
+    font-family: "Playfair Display", sans-serif;
+    font-size : 38px;
+    font-weight : 500;
+    margin : 20px 10px ;
+}
+#empty_cart > div:nth-child(2) {
+    font-family: "Playfair Display", sans-serif;
+font-size: 28px;
+margin : 15px 10px 20px  ;
+}
+.price {
+    font-size :18px ;
+margin: 10px 0;
+}
+.remove_btn {
+    margin: 15px 20px ;
+    background: transparent;
+    font-family:  sans-serif;
+    font-size: 15px;
+    padding-bottom : 5px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.remove_btn_hover {
+    margin: 15px 20px;
+    background: transparent;
+    font-family:  sans-serif;
+    font-size: 15px;
+    padding-bottom : 1px;
+    border: none;
+    border-bottom: 1px solid black;
+    transition: transform .3s ease-in-out ;
+  
+}
+    </style>
+  <!-- kartik -->
+  <body>
+    <nav></nav>
+    <div id="cart_main_div">
+      <div id="quick_nav">
+        <a href="/index.html"><span id='inside_quick_nav'>Home</span></a>
+        <span>></span>
+        <span>Cart</span>
+      </div>
+      <div id="cart">
+        <div id="empty_cart">
+          <div>CART</div>
+          <div>YOUR CART IS EMPTY.</div>
+           <a href="../index.html"><button id="empty-cart-btn">Continue Shopping</button></a>
+        </div>
+       <div id="not_empty_cart">
+           <div id="count"></div>
+
+        <div id="cart_main">
+            <div id="items_details">
+                <div id="headings">
+                    <div>ITEM(S)</div>
+                    <div>QUANTITY</div>
+                    <div>TOTAL</div>
+                   
+                </div>
+             
+                <div id="parent"></div>
+            </div>
+            <div id="order_summray">
+              <h2>Order Summary</h2>
+              <div id="promocode_btns">
+                <button>ENTER VOUCHER CODE</button>
+                <button>VIEW PROMO CODES</button>
+              </div>
+              <div id="display_cont">
+                <div id="input-box">
+                  <input type="text">
+                  <button>APPLY</button>
+                </div>
+               <table>
+                <tbody>
+                  <tr>
+                    <td>ORDER TOTAL (2 ITEMS) </td>
+                    <td id="amt" class='bold' ></td>
+                  </tr>
+                  <tr>
+                    <td>Discount</td>
+                    <td class='bold' >₹0</td>
+                  </tr>
+                  <tr>
+                    <td class="font-size">SHIPPING </td>
+                    <td class='bold' >FREE</td>
+                  </tr>
+                  <tr>
+                    <td class="extra-bold" >YOU PAY</td>
+                    <td id='final_amt' class="extra-bold"></td>
+                  </tr>
+                </tbody>
+               </table>
+               <div>INCLUSIVE OF ALL TAXES*</div>
+
+              </div>
+          <div id="checkout_btns">
+                <a href="ckeckout.html"><button id="btn-1"  >PROCEED TO CHECKOUT</button></a>
+              <a href="/index.html"><button id="btn-2" >CONTINUE SHOPPING</button></a>
+          </div>
+            </div>
+        </div>
+       </div>
+      </div>
+    </div>
+    <footer></footer>
+  </body>
+</html>
+<!-- <script type="module" src="scripts/cart.js"></script> -->
+<script type="module" >
+  /*
+  import { navbar } from '../../public/components/navbar.js'
+import {footer} from '../../public/components/footer.js'
+import {navTop} from '../components/navTop.js'
+import {debouncing} from '../components/debouncing.js'
+
+// import {navTop2} from '../components/navTop2.js'
+
+document.querySelector('nav').innerHTML = navbar()
+document.querySelector('footer').innerHTML = footer();
+
+navTop();
+
+// navTop2();
+
+debouncing();
+*/
+
+let count = document.getElementById('count')
+
+let cart = JSON.parse(localStorage.getItem("cart"))
+// console.log('cart:', cart)
+let empty_cart = document.getElementById('empty_cart')
+let parent = document.getElementById('parent')
+let not_empty_cart = document.getElementById('not_empty_cart')
+// console.log('kya h ye',localStorage.getItem("cart") )
+if (localStorage.getItem("cart") == null) {
+empty_cart.style.display = 'block';
+not_empty_cart.style.display= 'none';
+console.log('empty')
+}
+//   console.log(localStorage.getItem("cart"))
+else if (localStorage.getItem("cart")) {
+  empty_cart.style.display = 'none';
+  not_empty_cart.style.display= 'block';
+
+function showItems() {
+  // recover data from local storage having name cart
+   
+
+  count.innerHTML = `CART : <span style="font-family : sans-serif">${cart.length}</span> ITEMS`
+
+
+  cart.forEach(({name , price,image_url }) => {
+//creating details container having image, name , price add other imp. stuff
+    let main_div = document.createElement('div');
+
+    let img_div = document.createElement('div');
+
+    let name_div =  document.createElement('div');
+
+    let quantity_div = document.createElement('div');
+
+    let quantity =  document.createElement('div');
+    quantity.innerHTML = "<div class='signs'>-</div> <div class='quantity'>1</div><div class='signs'>+</div> "
+    quantity.setAttribute('class','quan')
+
+   
+
+    let p_name = document.createElement('div')
+    p_name.innerHTML = name
+    p_name.setAttribute('class','name')
+
+    let code =  document.createElement('div');
+    code.innerHTML = `<b>511518JCZABA002EA005967</b>`
+    
+    let p_img = document.createElement('img')
+    p_img.src = image_url[0]
+    p_img.setAttribute('class','image')
+
+    let p_weight = document.createElement('div')
+    let weight = Math.random()*50+10;
+    let fixed_decimal = Number.parseFloat(weight).toFixed(3)
+    p_weight.innerHTML = `Weight (g): ${fixed_decimal}`
+
+   
+
+    let p = document.createElement('div')
+    p.setAttribute('class','price')
+    p.innerHTML = `<b>₹${price}</b>`
+
+    let total = document.createElement('div')
+    total.innerHTML = `<b>₹${price}</b>`
+
+    let remove_btn = document.createElement('button')
+    remove_btn.setAttribute('class','remove_btn')
+    remove_btn.innerHTML = 'Remove'
+    remove_btn.onmouseover = ()=>{
+      remove_btn.setAttribute('class','remove_btn_hover')
+    }
+    remove_btn.onmouseleave = ()=>{
+      remove_btn.setAttribute('class','remove_btn')
+    }
+    remove_btn.onclick =  () =>{
+      setTimeout(()=>{
+        removeItem(name,main_div,parent)
+      },500)
+    }
+    let items_div = document.createElement('div')
+
+    img_div.append(p_img);
+
+    name_div.append(p_name ,code, price,p_weight )
+
+    items_div.append(p_img , name_div)
+    items_div.setAttribute('class','items_div')
+
+    quantity_div.append(quantity, remove_btn)
+
+    main_div.append(items_div, quantity_div , total)
+
+    parent.append(main_div);
+  
+
+  })
+
+      // let products = JSON.parse(localStorage.getItem("cart"));
+     
+
+  }
+  showItems()
+
+  function removeItem(name,main_div,parent) {
+    let cart = JSON.parse(localStorage.getItem("cart"))
+    
+    // console.log(name)
+    let arr = []
+    for (let i = 0 ; i < cart.length ; i++) {
+      if (cart[i].name != name) {
+        arr.push(cart[i])
+      }
+     
+    }
+   
+    cart = arr
+    count.innerHTML = `CART : <span style="font-family : sans-serif">${cart.length}</span> ITEMS`
+    localStorage.setItem('cart',JSON.stringify(cart))
+    parent.removeChild(main_div)
+    let display_cont = document.getElementById('display_cont')
+    showTotal()
+    if (cart.length === 0) {
+      empty_cart.style.display = 'block';
+      not_empty_cart.style.display= 'none';
+      console.log('empty')
+  }
+}
+
+  function showTotal() {
+    let parent = document.getElementById('display_cont')
+
+    let cart = JSON.parse(localStorage.getItem("cart"))
+    var sum = 0
+    cart.forEach(({price}) =>{
+      sum+= +price
+    })
+  
+
+    let amt = document.getElementById('amt')
+    amt.innerHTML = `₹${sum}`
+
+    let final_amt = document.getElementById('final_amt')
+    final_amt.innerHTML = `₹${sum}`
+
+    let checkout = document.getElementById('btn-1')
+  checkout.onclick = () =>{
+    // console.log('12')
+    // console.log('sum:', sum)
+    localStorage.setItem('total',JSON.stringify(sum))
+  }
+  }
+  showTotal() 
+
+
+}
+
+
+</script>

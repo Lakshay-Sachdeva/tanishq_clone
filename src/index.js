@@ -8,6 +8,7 @@ const userController = require("./controllers/user.controller") ;
 
 
 const { register , login } = require("./controllers/auth.controller") ;
+const cartController = require("./controllers/cart.controller")
 
 const singleController = require("./controllers/single_product.controller")
 
@@ -30,6 +31,8 @@ app.use("/products", productController);
 app.use("/user" , userController);
 // app.use("/register" , register ) ;
 app.use("/login" , login ) ;
+
+app.use("/cart",cartController)
 
 app.use('/single',singleController)
 
