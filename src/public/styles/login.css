@@ -1,87 +1,88 @@
-
 #logo {
-    margin: 0% 37%;
+	margin: 0% 37%;
 }
-#logo > img{
-    width: 100%;
-    height: 200px;
+#logo > img {
+	width: 100%;
+	height: 200px;
 }
 #content {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
 }
 #login {
-    display: flex;
-    flex-direction: column;
-    font-family: bold;
-    width: 100%;
-    /*border: 1px solid red;*/
+	display: flex;
+	flex-direction: column;
+	font-family: bold;
+	width: 100%;
+	/*border: 1px solid red;*/
 }
 .border {
-    border: 1px solid black;
-    padding: 0% 5%;
-    margin: 3% 15%;
-    text-align: center;
+	border: 1px solid black;
+	padding: 0% 5%;
+	margin: 3% 15%;
+	text-align: center;
 }
 .border1 {
-    border: 1px solid black;
-    padding: 0% 5%;
-    margin: 3% 15%;
-    text-align: center;
+	border: 1px solid black;
+	padding: 0% 5%;
+	margin: 3% 15%;
+	text-align: center;
 }
 #newuser {
-    width: 100%;
-    /*border: 1px solid black;*/
-    display: flex;
-    flex-direction: column;
+	width: 100%;
+	/*border: 1px solid black;*/
+	display: flex;
+	flex-direction: column;
 }
 #newuser > div {
-    margin: 1% 15%;
-    font-size: 25px;
+	margin: 1% 15%;
+	font-size: 25px;
 }
 #newuser > ul {
-    margin: 1% 15%;
-    font-size: 18px;
+	margin: 1% 15%;
+	font-size: 18px;
 }
 #newuser > button {
-    background-color: black;
-    color: white;
-    margin: 3% 15%;
-    padding: 2% 0;
-    color: white;
-    text-decoration: none;
+	background-color: black;
+	color: white;
+	margin: 3% 15%;
+	padding: 2% 0;
+	color: white;
+	text-decoration: none;
 }
 #div {
-    display: flex;
-    /* grid-template-columns: 50% 50%;
+	display: flex;
+	/* grid-template-columns: 50% 50%;
     grid-template-rows: 20px; */
-    flex-direction: row;
+	flex-direction: row;
 }
 /* #div > p {
     padding: 0% 2%;
 } */
 #div > #div1 {
-    padding: 0% 0% 0% 0%;
+	padding: 0% 0% 0% 0%;
 }
 #div > #div2 {
-    padding: 0% 0% 0% 20%;
-} 
- .border1 , .border1 > form {
-    display: flex;
-    flex-direction: column;
+	padding: 0% 0% 0% 20%;
+}
+.border1,
+.border1 > form {
+	display: flex;
+	flex-direction: column;
 }
 .border1 > form > input {
-    background-color: whitesmoke;
-    height: 50px;
-    margin: 2% 0;
-} 
-#email, #password {
-    border: none;
+	background-color: whitesmoke;
+	height: 50px;
+	margin: 2% 0;
+}
+#email,
+#password {
+	border: none;
 }
 .border1 > form > button {
-    background-color: black;
-    height: 50px;
-    margin: 2% 0;
-    color: white;
+	background-color: black;
+	height: 50px;
+	margin: 2% 0;
+	color: white;
 }

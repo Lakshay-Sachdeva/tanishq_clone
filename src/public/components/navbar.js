@@ -1,6 +1,5 @@
-function navbar(){
-
-    return `<!-- mediaqeury -->
+function navbar() {
+	return `<!-- mediaqeury -->
     <div id = "mediaQ">
         <div id='nav-m-top'>
             <div id = "brand_curr">
@@ -41,7 +40,7 @@ function navbar(){
                 <h3>DIAMOND</h3>
             </div>
             <div id = "cell">
-                <h3>ENGAEMENT RINGS</h3>
+                <h3>ENGAGEMENT RINGS</h3>
             </div>
             <div id = "cell">
                 <h3>DIGITAL GOLD</h3>
@@ -102,7 +101,7 @@ function navbar(){
         </div>
         
         <div>
-            <a href="html/loginpage.html" id = "user_l">LOGIN</a>
+            <a href="login.html" id = "user_l">LOGIN</a>
             <a href="#">ENCIRCLE</a>
             <a href="#">GOLDEN HARVEST</a>
             <a href="">BOOK AN APPOINTMENT</a>
@@ -236,7 +235,7 @@ function navbar(){
                             </div>
                             <div class="column">
                                 <h3>FINGER RING</h3>
-                                <a href="#">ENGAEMENT RINGS</a>
+                                <a href="#">ENGAGEMENT RINGS</a>
                                 <a href="#">SOLITARIES</a>
                                 <a href="#">CASUAL</a>
                             </div>
@@ -252,7 +251,7 @@ function navbar(){
             <div class="navbar">
 
                 <div class="dropdown">
-                    <button class="dropbtn" >ENGAEMENT RINGS</button>
+                    <button class="dropbtn" >ENGAGEMENT RINGS</button>
                     <div class="dropdown-content">
                         <div class="header">
 
@@ -529,7 +528,7 @@ function navbar(){
             </div>
         </div>
     </div>
-</div>`
+</div>`;
 }
 
 export default navbar;

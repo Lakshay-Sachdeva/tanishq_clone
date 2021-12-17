@@ -18,7 +18,15 @@ app.use(express.static("src/public"));
 app.use("/products", productController);
 
 app.get("/Tanishq", async (req, res) => {
-	res.render("index.ejs");
+	res.render("index");
+});
+
+app.get("/Tanishq/login", async (req, res) => {
+	res.render("login.ejs");
+});
+
+app.get("/Tanishq/signup", async (req, res) => {
+	res.render("signup.ejs");
 });
 
 // product controllers to be placed in other folder for products page
