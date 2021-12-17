@@ -1,5 +1,5 @@
 
-function footer(){
+module.exports = ()=>{
 
     return `<div id = "footer_layout">
 
@@ -81,4 +81,3 @@ function footer(){
 </div>`
 }
 
-export {footer}

@@ -1,14 +1,17 @@
-
-
 const express = require('express');
-
 // const crudController = require('./crud.controller');
 
+const Product = require("../models/product.model")
+const footer = require("../views/scripts/footer");
+
+
 const router = express.Router();
-router.get("/", (req,res) => {
+router.get("/:id", async (req,res) => {
     // return res.send("working")
-    const product = { name: 'kartik' }
+    const product = await Product.findById(req.params.id).lean().exec()
+    // console.log('product',product)
     res.render("single_product", {
+        footer,
         product
     })
 })
