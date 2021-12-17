@@ -1,16 +1,23 @@
 const express = require("express");
 
-const navbar = require("./public/scripts/navbar");
 
+/////////////////   Controllers    //////////////////////
 const productController = require("./controllers/product.controller");
 
 const userController = require("./controllers/user.controller") ;
+
+
 const { register , login } = require("./controllers/auth.controller") ;
 
 const singleController = require("./controllers/single_product.controller")
 
 
-// const Product = require("./models/product.model");
+/////////////////   Models   ///////////////////////
+const Products = require("./models/product.model");
+=======
+const navbar = require("./public/scripts/navbar");
+
+
 
 const app = express();
 
@@ -45,7 +52,16 @@ app.get("/Tanishq/signup", async (req, res) => {
 	res.render("signup.ejs");
 });
 
+
+app.get("/Tanishq/products", async (req, res) => {
+    const Product = await Products.find().lean().exec();
+    res.render("products", {
+		Product: Product
+	})
+})
+
 app.use("/single" , singleController)
+
 
 // product controllers to be placed in other folder for products page
 // app.get("/Tanishq/products", async(req, res) => {
