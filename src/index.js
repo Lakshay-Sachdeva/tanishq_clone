@@ -1,9 +1,10 @@
 const express = require("express");
 
-
+/////////////////   Controllers    //////////////////////
 const productController = require("./controllers/product.controller");
 
-// const Product = require("./models/product.model");
+/////////////////   Models   ///////////////////////
+const Products = require("./models/product.model");
 
 const app = express();
 
@@ -28,6 +29,13 @@ app.get("/Tanishq/login", async (req, res) => {
 app.get("/Tanishq/signup", async (req, res) => {
 	res.render("signup.ejs");
 });
+
+app.get("/Tanishq/products", async (req, res) => {
+    const Product = await Products.find().lean().exec();
+    res.render("products", {
+		Product: Product
+	})
+})
 
 // product controllers to be placed in other folder for products page
 // app.get("/Tanishq/products", async(req, res) => {
