@@ -11,6 +11,8 @@ const { register , login } = require("./controllers/auth.controller") ;
 
 const singleController = require("./controllers/single_product.controller")
 
+const cartController = require("./controllers/cart.controller")
+
 
 /////////////////   Models   ///////////////////////
 const Products = require("./models/product.model");
@@ -22,13 +24,13 @@ const app = express();
 
 app.use(express.json()) ;
 
-app.use(express.static("src/public"))
-
 app.set("view engine", "ejs");
+
+app.use(express.static('public'));
 
 
 app.set("views", "./src/views");
-app.use(express.static("src/public"));
+app.use(express.static("public"));
 
 app.use("/products", productController);
 app.use("/user" , userController);
@@ -36,6 +38,7 @@ app.use("/register" , register ) ;
 app.use("/login" , login ) ;
 
 app.use('/single',singleController)
+app.use("/cart",cartController)
 
 
 app.get("/Tanishq", async (req, res) => {

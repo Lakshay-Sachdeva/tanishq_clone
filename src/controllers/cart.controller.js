@@ -1,19 +1,14 @@
 const express = require('express');
 // const crudController = require('./crud.controller');
 
-const Product = require("../models/product.model")
-// const footer = require("../views/scripts/footer");
-
+// const Product = require("../models/product.model")
+// const footer = require("../views/scripts/foot
 
 const router = express.Router();
-router.get("/:id", async (req,res) => {
+router.get("/", async (req,res) => {
     // return res.send("working")
-    const product = await Product.findById(req.params.id).lean().exec()
     // console.log('product',product)
-    res.render("single_product", {
-       
-        product
-    })
+    res.render("cart")
 })
 
 /* router.post("/" , crudController.post(Product)) ;

@@ -1,240 +1,260 @@
-get_username();
+import { navbar } from '../components/navbar.js'
+import {footer} from '../components/footer.js'
+import {navTop} from '../components/navTop.js'
+import {debouncing} from '../components/debouncing.js'
 
-function get_username(){
-    let uname = JSON.parse(localStorage.getItem("signup"))
-        console.log('uname:', uname.name)
+// import {navTop2} from '../components/navTop2.js'
 
-    let tem = document.getElementById("user-name")
+document.querySelector('nav').innerHTML = navbar()
+document.querySelector('footer').innerHTML = footer();
 
-    uname.forEach((item) => {
-        tem.innerText = "WELCOME " + item.name.toUpperCase();
-    })
+navTop();
 
+// navTop2();
+
+debouncing();
+//created a dummy data for ls
+
+// let dummy_data = [
+//   {
+//     name: 'Opulent Gold Jhumka Style Earrings',
+//     newPrice: 14710,
+//     oldPrice: 14795,
+//     images: [
+//       'https://staticimg.titan.co.in/Tanishq/Catalog/511193PAJAAA00_1.jpg?impolicy=pqmed&imwidth=640',
+//     ],
+//     purity: '22.00',
+//     jewelleryType: 'Plain Gold Jewellery',
+//     occasion: 'Casual Wear',
+//     product: 'Pendant',
+//     size : "Chain Size: 53 mm",
+//     weight : "7.639g",
+//   },
+//   {
+//     name: 'Traditional 22 Karat Gold Half Moon Pendant',
+//     newPrice: '39787',
+//     oldPrice: '40221',
+//     images: [
+//       'https://staticimg.titan.co.in/Tanishq/Catalog/511194PSHAAA00_1.jpg?impolicy=pqmed&imwidth=640',
+//       'https://staticimg.titan.co.in/Tanishq/Catalog/511194PSHAAA00_2.jpg?impolicy=pqmed&imwidth=640',
+//       'https://staticimg.titan.co.in/Tanishq/Catalog/511194PSHAAA00_3.jpg?impolicy=pqmed&imwidth=640',
+//     ],
+//     purity: '22.00',
+//     jewelleryType: 'Plain Gold Jewellery',
+//     occasion: 'Casual Wear',
+//     product: 'Pendant',
+//     size : "Chain Size: 18.23 cm",
+//     weight : "7.639g",
+//   },
+//   {
+//     name: "Charming Ruby Pendant With Chain",
+//     newPrice: 72948,
+//     oldPrice: 73603,
+//     images: ["https://staticimg.titan.co.in/Tanishq/Catalog/513318GDJAB18_1.jpg?impolicy=pqmed&imwidth=640"],
+//     purity: "22.00",
+//     jewelleryType: "Jewellery with Gemstones",
+//     occasion: "Traditional and Ethnic Wear",
+//     product:"Necklace"
+// },
+// {
+//     name: "Elegant Emerald And Ruby Pendant With Chain",
+//     newPrice: 53994,
+//     oldPrice:  54468,
+//     images: ["https://staticimg.titan.co.in/Tanishq/Catalog/513318GEBAA40_1.jpg?impolicy=pqmed&imwidth=640"],
+//     purity: "22.00",
+//     jewelleryType: "Jewellery with Gemstones",
+//     occasion: "Traditional and Ethnic Wear",
+//     product:"Necklace"
+// },
+// {
+//     name: "Filigree Work Gold Neckwear",
+//     newPrice: 137055,
+//     oldPrice: 140164,
+//     images: ["https://staticimg.titan.co.in/Tanishq/Catalog/513220NPLAA00_1.jpg?impolicy=pqmed&imwidth=640"],
+//     purity: "22.00",
+//     jewelleryType: "Plain Gold Jewellery",
+//     occasion: "Traditional and Ethnic Wear",
+//     product:"Necklace"
+// },
+// {
+//     name: "Glorious Detailed Gold Haaram",
+//     newPrice: 306930,
+//     oldPrice: 318408,
+//     images: ["https://staticimg.titan.co.in/Tanishq/Catalog/513719EDH1AAP1_1.jpg?impolicy=pqmed&imwidth=640"],
+//     purity: "22.00",
+//     jewelleryType: "Plain Jewellery with Stones",
+//     occasion: "Traditional and Ethnic Wear",
+//     product:"Necklace"
+// },
+// {
+//     name: "Traditional Gold Leaf Pattern Haaram",
+//     newPrice: 303080,
+//     oldPrice:314092 ,
+//     images: ["https://staticimg.titan.co.in/Tanishq/Catalog/513719EEV1AA00_1.jpg?impolicy=pqmed&imwidth=640"],
+//     purity: "22.00",
+//     jewelleryType: "Plain Gold Jewellery",
+//     occasion: "Traditional and Ethnic Wear",
+//     product:"Necklace"
+// },
+// ]
+// localStorage.setItem('cart',JSON.stringify(dummy_data))
+
+
+
+let count = document.getElementById('count')
+
+let cart = JSON.parse(localStorage.getItem("cart"))
+// console.log('cart:', cart)
+let empty_cart = document.getElementById('empty_cart')
+let parent = document.getElementById('parent')
+let not_empty_cart = document.getElementById('not_empty_cart')
+// console.log('kya h ye',localStorage.getItem("cart") )
+if (localStorage.getItem("cart") == null) {
+empty_cart.style.display = 'block';
+not_empty_cart.style.display= 'none';
+console.log('empty')
 }
+//   console.log(localStorage.getItem("cart"))
+else if (localStorage.getItem("cart")) {
+  empty_cart.style.display = 'none';
+  not_empty_cart.style.display= 'block';
 
-let sec = document.getElementById("in_cart");
-sec.innerText = `IN YOUR CART`
+function showItems() {
+  // recover data from local storage having name cart
+   
 
-let data = JSON.parse(localStorage.getItem("Pf_cart")) || [];
-
-console.log(data);
-
-var value = 0;
-var discount = 0;
-var assembly = 449;
-
-let div1 = document.getElementById("dis");
-
-data.forEach(function (el, i) {
-
-    var count = 1;
-    el.qty = 1;
-    console.log(el)
-
-    value += el.price;
-    discount += el.cutPrice
-    console.log(value, discount)
-
-    let item = document.createElement("div");
-    item.setAttribute("class", "item");
-
-    //--------------box-A-----------------------//
-
-    let div1A = document.createElement("div");
-    let img = document.createElement("img");
-    img.classList = "pics"
-    img.src = el.img;
-    div1A.append(img);
-
-    //--------------------box-B-------------------//
-    let div1B = document.createElement("div");
-    let div1B1 = document.createElement("div");
-    div1B1.innerText = `${el.name} - ${el.brand}`;
-    let div1B2 = document.createElement("div");
-    div1B2.innerText = "36 Month's Warranty, 100% Genuine";
-    div1B2.style.color = "#f16521";
-    let div1B3 = document.createElement("div");
-    div1B3.innerText = `Delivery by Thur 18th Nov.`;
-    div1B3.style.color = "darkgrey"
-
-    div1B.append(div1B1, div1B2, div1B3)
-
-    //-------------------box C-----------------------//
-    let div1C = document.createElement("div");
-    div1C.classList = "plus";
-    let div1C1 = document.createElement("div");
-    div1C1.innerText = "-";
-    div1C1.style.cursor = "pointer";
+  count.innerHTML = `CART : <span style="font-family : sans-serif">${cart.length}</span> ITEMS`
 
 
-    div1C1.addEventListener("click", function (i) {
-        count--;
-        el.qty--;
-        if (count === 0 && el.qty === 0) { delItemsFromCart(i); item.remove(); }
-        div1C2.innerText = count;
-        price.innerText = `₹ ${count * el.price}`
-        cutprice.innerText = `₹ ${count * el.cutPrice}`;
-        value -= el.price;
-        discount -= el.cutPrice;
-        document.getElementById("cp").innerText = `₹ ${value}`;
-        document.getElementById("pr").innerText = `₹ ${discount}`;
-        document.getElementById("total").innerText = `₹ ${value + 449}`;
-        //-------
-        let Checkout_Data = {
-            Cart_Value: value,
-            Retail_Discount: discount,
-            Delivery_Free: 0,
-            Assembly: assembly,
-            Total: value + 449
-        };
-        localStorage.setItem("Checkout_Data", JSON.stringify(Checkout_Data));
-        // console.log("minus",value);
-    });
+  cart.forEach(({name , newPrice,images }) => {
+//creating details container having image, name , price add other imp. stuff
+    let main_div = document.createElement('div');
 
-    let div1C3 = document.createElement("div");
-    div1C3.innerText = "+";
-    div1C3.style.cursor = "pointer";
+    let img_div = document.createElement('div');
 
+    let name_div =  document.createElement('div');
 
-    div1C3.addEventListener("click", function () {
-        count++;
-        el.qty++;
-        div1C2.innerText = count;
-        price.innerText = `₹ ${count * el.price}`
-        cutprice.innerText = `₹ ${count * el.cutPrice}`;
-        value += el.price;
-        discount += el.cutPrice;
-        document.getElementById("cp").innerText = `₹ ${value}`;
-        document.getElementById("pr").innerText = `₹ ${discount}`;
-        document.getElementById("total").innerText = `₹ ${value + 449}`;
+    let quantity_div = document.createElement('div');
 
-        //-------
-        let Checkout_Data = {
-            Cart_Value: value,
-            Retail_Discount: discount,
-            Delivery_Free: 0,
-            Assembly: assembly,
-            Total: value + 449
-        };
-        localStorage.setItem("Checkout_Data", JSON.stringify(Checkout_Data));
+    let quantity =  document.createElement('div');
+    quantity.innerHTML = "<div class='signs'>-</div> <div class='quantity'>1</div><div class='signs'>+</div> "
+    quantity.setAttribute('class','quan')
 
+   
 
-    });
+    let p_name = document.createElement('div')
+    p_name.innerHTML = name
+    p_name.setAttribute('class','name')
 
-    let div1C2 = document.createElement("div");
-    div1C2.innerText = count;
-    div1C2.className = "countBox";
+    let code =  document.createElement('div');
+    code.innerHTML = `<b>511518JCZABA002EA005967</b>`
+    
+    let p_img = document.createElement('img')
+    p_img.src = images[0]
+    p_img.setAttribute('class','image')
 
+    let p_weight = document.createElement('div')
+    let weight = Math.random()*50+10;
+    let fixed_decimal = Number.parseFloat(weight).toFixed(3)
+    p_weight.innerHTML = `Weight (g): ${fixed_decimal}`
 
+   
 
-    let cutprice = document.createElement("div");
-    cutprice.innerText = `₹ ${el.cutPrice}`;
-    cutprice.style.color = "grey";
-    cutprice.style.textDecoration = "line-through";
+    let price = document.createElement('div')
+    price.setAttribute('class','price')
+    price.innerHTML = `<b>₹${newPrice}</b>`
 
-    let price = document.createElement("div");
-    price.innerText = `₹ ${el.price}`;
-    price.style.color = "#f16521";
-    price.style.fontWeight = 700;
+    let total = document.createElement('div')
+    total.innerHTML = `<b>₹${newPrice}</b>`
 
-    let divUP = document.createElement("div");
-    divUP.classList = "quan"
-
-    divUP.append(div1C1, div1C2, div1C3);
-    div1C.append(divUP, cutprice, price);
-
-
-    //------------------box -D --------------------//
-
-    let div1D = document.createElement("div");
-    div1D.classList = "wish";
-    let img1 = document.createElement("img");
-    img1.classList = "del";
-    img1.src = "https://cdn-icons-png.flaticon.com/128/1632/1632602.png";
-    img1.addEventListener("click", function () {
-        el.qty = 0;
-        delItemsFromCart(i);
-        value -= count * el.price;
-        discount -= count * el.cutPrice;
-        document.getElementById("cp").innerText = `₹ ${value}`;
-        document.getElementById("pr").innerText = `₹ ${discount}`;
-        document.getElementById("total").innerText = `₹ ${value + 449}`;
-        item.remove();
-
-        //----------
-        let Checkout_Data = {
-            Cart_Value: value,
-            Retail_Discount: discount,
-            Delivery_Free: 0,
-            Assembly: assembly,
-            Total: value + 449
-        };
-        localStorage.setItem("Checkout_Data", JSON.stringify(Checkout_Data));
-    });
-
-    let img2 = document.createElement("img");
-    img2.classList = "del";
-    img2.src = "https://icon-library.com/images/wish-list-icon/wish-list-icon-1.jpg";
-    img2.addEventListener("click", function () {
-        if (img2.src == "https://icon-library.com/images/wish-list-icon/wish-list-icon-1.jpg") { img2.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png" }
-        else { img2.src = "https://icon-library.com/images/wish-list-icon/wish-list-icon-1.jpg" }
-    });
-
-    div1D.append(img1, img2)
-
-    item.append(div1A, div1B, div1C, div1D);
-    div1.append(item);
-
-    //-------------------------------------------------//
-
-});
-
-function delItemsFromCart(i) {
-    data.splice(i, 1)
-    localStorage.setItem("cartData", JSON.stringify(data))
-}
-
-console.log(data);
-// ---------------Local storage set---------------------//
-
-localStorage.setItem("cartData", JSON.stringify(data));
-
-
-//---------------box 2---------------------//
-
-document.getElementById("cp").innerText = `₹ ${value}`;
-document.getElementById("pr").innerText = `₹ ${discount}`;
-document.getElementById("total").innerText = `₹ ${value + 449}`;
-
-
-//-----------------------checkbox function----------//
-
-var div = document.getElementById("gi");
-div.style.display = "none";
-function myFunction() {
-    var checkBox = document.getElementById("myCheck");
-    var div = document.getElementById("gi");
-    if (checkBox.checked == true) {
-        div.style.display = "flex";
-        document.getElementById("total").innerText = `₹ ${value + 449 + 99}`
-    } else {
-        div.style.display = "none";
-        document.getElementById("total").innerText = `₹ ${value + 449 - 99}`
+    let remove_btn = document.createElement('button')
+    remove_btn.setAttribute('class','remove_btn')
+    remove_btn.innerHTML = 'Remove'
+    remove_btn.onmouseover = ()=>{
+      remove_btn.setAttribute('class','remove_btn_hover')
     }
+    remove_btn.onmouseleave = ()=>{
+      remove_btn.setAttribute('class','remove_btn')
+    }
+    remove_btn.onclick =  () =>{
+      setTimeout(()=>{
+        removeItem(name,main_div,parent)
+      },500)
+    }
+    let items_div = document.createElement('div')
+
+    img_div.append(p_img);
+
+    name_div.append(p_name ,code, price,p_weight )
+
+    items_div.append(p_img , name_div)
+    items_div.setAttribute('class','items_div')
+
+    quantity_div.append(quantity, remove_btn)
+
+    main_div.append(items_div, quantity_div , total)
+
+    parent.append(main_div);
+  
+
+  })
+
+      // let products = JSON.parse(localStorage.getItem("cart"));
+     
+
+  }
+  showItems()
+
+  function removeItem(name,main_div,parent) {
+    let cart = JSON.parse(localStorage.getItem("cart"))
+    
+    // console.log(name)
+    let arr = []
+    for (let i = 0 ; i < cart.length ; i++) {
+      if (cart[i].name != name) {
+        arr.push(cart[i])
+      }
+     
+    }
+   
+    cart = arr
+    count.innerHTML = `CART : <span style="font-family : sans-serif">${cart.length}</span> ITEMS`
+    localStorage.setItem('cart',JSON.stringify(cart))
+    parent.removeChild(main_div)
+    let display_cont = document.getElementById('display_cont')
+    showTotal()
+    if (cart.length === 0) {
+      empty_cart.style.display = 'block';
+      not_empty_cart.style.display= 'none';
+      console.log('empty')
+  }
 }
 
+  function showTotal() {
+    let parent = document.getElementById('display_cont')
 
-let Checkout_Data = {
-    Cart_Value: value,
-    Retail_Discount: discount,
-    Delivery_Free: 0,
-    Assembly: assembly,
-    Total: value + 449
-};
-localStorage.setItem("Checkout_Data", JSON.stringify(Checkout_Data));
+    let cart = JSON.parse(localStorage.getItem("cart"))
+    var sum = 0
+    cart.forEach(({newPrice}) =>{
+      sum+= +newPrice
+    })
+  
+
+    let amt = document.getElementById('amt')
+    amt.innerHTML = `₹${sum}`
+
+    let final_amt = document.getElementById('final_amt')
+    final_amt.innerHTML = `₹${sum}`
+
+    let checkout = document.getElementById('btn-1')
+  checkout.onclick = () =>{
+    // console.log('12')
+    // console.log('sum:', sum)
+    localStorage.setItem('total',JSON.stringify(sum))
+  }
+  }
+  showTotal() 
 
 
-function mycheck() {
-    let inp = document.getElementById("pincode").value;
-    if (inp.length != 6) { alert`please fill a valid pincode` }
 }
+
