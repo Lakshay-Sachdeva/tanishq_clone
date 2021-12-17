@@ -1,7 +1,7 @@
 const express = require("express");
 
 
-/////////////////   Controllers    //////////////////////
+//------------------   Controllers    ---------------------//
 const productController = require("./controllers/product.controller");
 
 const userController = require("./controllers/user.controller") ;
@@ -12,7 +12,7 @@ const { register , login } = require("./controllers/auth.controller") ;
 const singleController = require("./controllers/single_product.controller")
 
 
-/////////////////   Models   ///////////////////////
+//----------------  Models   ----------------------//
 const Products = require("./models/product.model");
 
 const navbar = require("./public/scripts/navbar");
@@ -22,17 +22,13 @@ const app = express();
 
 app.use(express.json()) ;
 
-app.use(express.static("src/public"))
-
 app.set("view engine", "ejs");
-
-
 app.set("views", "./src/views");
-app.use(express.static("src/public"));
+app.use(express.static("./src/public"));
 
 app.use("/products", productController);
 app.use("/user" , userController);
-app.use("/register" , register ) ;
+// app.use("/register" , register ) ;
 app.use("/login" , login ) ;
 
 app.use('/single',singleController)
@@ -52,9 +48,9 @@ app.get("/Tanishq/signup", async (req, res) => {
 
 
 app.get("/Tanishq/products", async (req, res) => {
-    const Product = await Products.find().lean().exec();
+    const product = await Products.find().lean().exec();
     res.render("products", {
-		Product: Product
+		product
 	})
 })
 
@@ -62,4 +58,3 @@ app.use("/single" , singleController)
 
 
 module.exports = app;
-

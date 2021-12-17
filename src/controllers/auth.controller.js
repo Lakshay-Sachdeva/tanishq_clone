@@ -14,6 +14,8 @@ const register = async (req , res ) => {
             return res.status(400).json({ status: "failed" , message: "Email address already exists, Try Logging in."} ) ;
         }
 
+        console.log(user);
+
         user = await User.create(req.body) ;
 
         const token = newToken(user) ;
