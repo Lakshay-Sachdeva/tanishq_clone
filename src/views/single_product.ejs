@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products Page</title>
-    <link rel="stylesheet" href="../css/products.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/navbar.css">
+    <title>Buy <%= product.purity[0]%><%= product.purity[1]%>KT Yellow Gold <%= product.category %><%= product.name %></title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,16 +32,17 @@
         <div class="grid grid-cols-2 gap-4 m-2">
             <!-- left div -->
             <div class='border border-green-700'>
-                <div id="test" class="border border-black  ">
-                    <img id="main_img" class='border border-green-700 h-auto w-4/5' src=<%=product.image_url[0] %>
+                <div >
+                    <img id="main_img" class='h-auto w-3/4 ml-8 mt-4' src=<%=product.image_url[0] %>
                     alt="">
 
                 </div>
-                <div class="grid grid-cols-2 m-2 text-base">
+                <div class="flex ml-6 gap-12 text-base mb-8">
                     <div class="underline text-sm">CLICK TO ZOOM</div>
-                    <button class="bg-black text-white w-2/3">TRY IT ON</button>
+                    <button class="bg-black text-white px-10">TRY IT ON</button>
                 </div>
-                <div class="grid grid-cols-3 m-2">
+                <div class="flex gap-8 m-2">
+                    <div class="mt-6 ml-4 cursor-pointer">⧼</div>
                     <img id="img_0" onclick="abc(`<%= JSON.stringify(product.image_url) %>`,0)"
                         class="w-20 border border-black cursor-pointer" src=<%=product.image_url[0] %> alt="">
 
@@ -53,6 +51,7 @@
 
                     <img id="img_2" onclick="abc(`<%= JSON.stringify(product.image_url) %>`,2)"
                         class="w-20 border cursor-pointer" src=<%=product.image_url[2] %> alt="">
+                        <div class="mt-6 cursor-pointer">⦒</div>
                 </div>
             </div>
             <!-- right div -->
@@ -83,7 +82,7 @@
                     <div class="flex m-2">
                         <div>
                             <div>Gross Weight</div>
-                            <button class="border border-black w-36 h-12">6.20g</button><button class="border w-36 h-12">6.40g</button>
+                            <button class="border border-black w-72 h-12"><%= product.weight %>g</button>
 
                         </div>
                         <div class="w-1/4 ml-10">
