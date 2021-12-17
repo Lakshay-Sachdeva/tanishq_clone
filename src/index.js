@@ -14,10 +14,8 @@ const singleController = require("./controllers/single_product.controller")
 
 /////////////////   Models   ///////////////////////
 const Products = require("./models/product.model");
-=======
+
 const navbar = require("./public/scripts/navbar");
-
-
 
 const app = express();
 
@@ -63,12 +61,5 @@ app.get("/Tanishq/products", async (req, res) => {
 app.use("/single" , singleController)
 
 
-// product controllers to be placed in other folder for products page
-// app.get("/Tanishq/products", async(req, res) => {
-//     const product_data = await Product.find().lean().exec();
-//     res.render("products_page", {
-//         product_data: product_data,
-//     });
-// })
-
 module.exports = app;
+
