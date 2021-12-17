@@ -1,3 +1,4 @@
+
 // import {products} from "../data/data.js"
 
     let select = document.getElementById("currency")
@@ -122,6 +123,4 @@
 
     
    
-    
-    
    
