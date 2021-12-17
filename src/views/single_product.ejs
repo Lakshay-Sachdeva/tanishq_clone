@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <div class="mx-2 my-6">
-                            <button onclick="add_to_cart('<%= JSON.stringify(product._id)   %>' )"
+                            <button onclick="add_to_cart('<%= JSON.stringify(product)   %>' )"
                                 class="bg-black text-white px-14 h-10">ADD TO CART</button>
                             <button class="border border-black h-10">BOOK AN APPOINTEMENT</button>
                         </div>
@@ -146,7 +146,7 @@
         const main_img = document.getElementById("main_img")
         main_img.src = new_img[num]
     }
-
+/*
     const add_to_cart = (id) => {
         console.log("click")
         const new_id = JSON.parse(id)
@@ -181,7 +181,42 @@
             alert("product is added cart")
         }
 
+/*
 
+//cart fxn 
+    const add_to_cart = (product) => {
+        console.log("click")
+        const new_product = JSON.parse(product)
+        // console.log(id)
+        console.log(new_product)
+
+
+
+        if (localStorage.getItem("cart") == null) {
+            // console.log("null")
+            localStorage.setItem("cart", JSON.stringify([]))
+        }
+        let cart = localStorage.getItem("cart")
+        let new_cart = JSON.parse(cart)
+
+        let flag = "no"
+        new_cart.forEach((item) => {
+            console.log("p", product)
+            if (item._id === new_product._id) {
+                flag = "yes"
+            }
+        })
+
+        if (flag === "yes") {
+            alert("already in cart")
+        }
+        else {
+
+            new_cart.push(new_product)
+
+            localStorage.setItem("cart", JSON.stringify(new_cart))
+            alert("product is added cart")
+        }
 
 
 
