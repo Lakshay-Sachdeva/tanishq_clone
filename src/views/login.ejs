@@ -76,11 +76,11 @@
             padding: 0% 0% 0% 20%;
         }
         .border1,
-        .border1 > form {
+        .border1 > .form {
             display: flex;
             flex-direction: column;
         }
-        .border1 > form > input {
+        .border1 > .form > input {
             background-color: whitesmoke;
             height: 50px;
             margin: 2% 0;
@@ -89,7 +89,7 @@
         #password {
             border: none;
         }
-        .border1 > form > button {
+        .border1 > .form > button {
             background-color: black;
             height: 50px;
             margin: 2% 0;
@@ -110,15 +110,15 @@
 					<div class="border"><h3>LOGIN VIA OTP</h3></div>
 					<div class="border1">
 						<h3>LOGIN USING PASSWORD</h3>
-						<form id="myForm" onsubmit="signin(event)" action="">
+						<div class = "form" id="myForm" onsubmit="signin(event)" action="">
 							<input type="email" id="email" placeholder="ENTER YOUR EMAIL" />
 							<input type="password" id="password" placeholder="PASSWORD" />
 							<div id="div">
 								<p id="div1"><input type="checkbox" />REMEMBER ME</p>
 								<p id="div2">FORGOT PASSWORD</p>
 							</div>
-							<button id="sun"><b>SUBMIT</b></button>
-						</form>
+							<button id="sun" onclick = "login()"><b>SUBMIT</b></button>
+						</div>
 					</div>
 					<div class="border"><h3>LOGIN VIA FACEBOOK/GOOGLE</h3></div>
 				</div>
@@ -145,7 +145,7 @@
 	</body>
 </html>
 
-<script>
+<!-- <script>
 	function signin(event) {
 		event.preventDefault();
 
@@ -198,4 +198,47 @@
 	//     for(let j=0; j)
 	// }
 	//}
+</script> -->
+
+<script>
+	let register = document.getElementById("register");
+	register.onclick=() => {
+		window.location.href = "http://127.0.0.1:2424/Tanishq/signup" ;
+	}
+
+	async function login(){
+		try{
+			let email = document.getElementById("email").value ;
+			let password = document.getElementById("password").value;
+
+			let cred = {
+				email,
+				password
+			}
+
+			cred = JSON.stringify(cred);
+
+			console.log(cred);
+
+			let res = await fetch(`http://127.0.0.1:2424/login` , {
+				method:"POST",
+				body : cred,
+				headers : {
+					'Content-Type': 'application/json'
+				}
+			}) 
+
+			let response = await res.json() ;
+
+			console.log(response);
+			// --------  -----------//
+
+
+
+
+		}
+		catch(e){
+			console.log(e)
+		}
+	}
 </script>

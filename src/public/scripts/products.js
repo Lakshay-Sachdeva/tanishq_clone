@@ -1,15 +1,15 @@
 
-import navbar from '../components/navbar'
+// import navbar from '../components/navbar'
 
-let navbar_section =  document.getElementById("navbar");
-navbar_section.innerHTML = navbar();
+// let navbar_section =  document.getElementById("navbar");
+// navbar_section.innerHTML = navbar();
 
-// Adding  Footer --------------------------------------
+// // Adding  Footer --------------------------------------
 
-import footer from '../components/footer'
+// import footer from '../components/footer'
 
-let footer_section = document.getElementById("footer");
-footer_section.innerHTML = footer();
+// let footer_section = document.getElementById("footer");
+// footer_section.innerHTML = footer();
 
 let twotaglh = document.getElementById("twotaglh");
 let twotaghl = document.getElementById("twotaghl");

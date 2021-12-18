@@ -11,13 +11,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@200&display=swap" rel="stylesheet">
     <title>Tanishq | Online Gold & Diamond Jewellery Shopping Store</title>
     <!-- <link rel="stylesheet" href="css/footer.css"> -->
-    <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/home.css">
+    
+    <link rel="stylesheet" href="../public/styles/home.css">
+    <link rel="stylesheet" href="../public/styles/footer.css">
     <link rel="shortcut icon" href="https://www.tanishq.co.in/favicon.png" type="image/png">
 </head>
 <body>
-    <header id = "navbar"></header>
+    <header id = "navbar" ><%- include('./partials/navbar'); %></header>
 
     <div id = "layout">
 
@@ -164,7 +164,8 @@
 </body>
 </html>
 
-<script type="module" src="scripts/index.js"></script>
-<script type="module" src="scripts/navTop.js"></script>
+<!-- <script type="module" src="scripts/index.js"></script> -->
+<!-- <script type="module" src="scripts/navTop.js"></script>
 <script type="module" src="scripts/navTop2.js"></script>
-<script type="module" src="scripts/deboucing.js"></script>
+<script type="module" src="scripts/deboucing.js"></script> -->
+<script src="../public/scripts/index.js"></script>
