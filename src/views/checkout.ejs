@@ -255,84 +255,7 @@
             color: white;
             margin-left: 150px;
         }
-        #headings {
-    display: grid;
-    grid-template-columns: 70% 20% 10%; 
-    margin: 10px;
-}
-#parent > div {
-
-
-display: grid;
-grid-template-columns: 70% 20% 10%;
-margin : 10px;
-border-top: 1px solid #DDDDDD;
-}
-#parent > div > div {
-margin-top : 10px;
-}
-.image {
-width : 160px ;
-}
-.name {
-    font-size : 18px;
-    font-weight : 800;
-    margin: 15px 0 5px 0;
-}
-.signs {
-    display : inline-block;
-    color : gray;
-    margin : 5px 10px ;
-    /* border : 1px dashed black;   */
-    font-size: 30px;
-    cursor : pointer;
-}
-.signs:hover {
-    color : black;
-}
-.price {
-    font-size :18px ;
-margin: 10px 0;
-} 
-.items_div{
-    display : grid;
-    grid-template-columns: 30% 50%;
-    grid-gap: 8%;
-    /* justify-content: left; */
-    /* width : 50%; */
-    /* border : 3px solid black !important; */
-}
-.quantity {
-    color: black;
-    display : inline-block;
-    border : 1px solid black;
-     /* width : 15px;
- /*   height : 30px;  */
-    padding: 5px 10px; 
-    /* padding-left : 10px; */
-    font-size: 18px;
-}
-.remove_btn {
-    margin: 15px 20px ;
-    background: transparent;
-    font-family:  sans-serif;
-    font-size: 15px;
-    padding-bottom : 5px;
-    border: none;
-    border-bottom: 1px solid black;
-    cursor: pointer;
-}
-.remove_btn_hover {
-    margin: 15px 20px;
-    background: transparent;
-    font-family:  sans-serif;
-    font-size: 15px;
-    padding-bottom : 1px;
-    border: none;
-    border-bottom: 1px solid black;
-    transition: transform .3s ease-in-out ;
-    cursor: pointer;
-}
+      
     </style>
 </head>
 <body>
@@ -441,78 +364,7 @@ margin: 10px 0;
                                  <div id="parent"></div>
                             </div>
 
-                            <!-- <div id="order_summray">
-                                <h2>Order Summary</h2>
-                                <div id="promocode_btns">
-                                    <button>ENTER VOUCHER CODE</button>
-                                    <button>VIEW PROMO CODES</button>
-                                </div>
-
-                                <div id="display_cont">
-                                    <div id="input-box">
-                                        <input type="text">
-                                        <button>APPLY</button>
-                                    </div> 
-
-                                     <table>
-                                            <tbody>
-                                            <tr>
-                                                    <td>ORDER TOTAL (2 ITEMS) </td>
-                                                    <td id="amt"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Discount</td>
-                                                    <td>₹0</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>SHIPPING </td>
-                                                    <td>FREE</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>YOU PAY</td>
-                                                    <td id='final_amt'></td>
-                                                </tr>
-                                     </tbody>
-                                 </table>
-
-                            <div>INCLUSIVE OF ALL TAXES*</div> -->
-             
-                        </div>
-
-                        <!-- <div id="checkout_btns">
-                             a href="../ckeckout.html"><button>PROCEED TO CHECKOUT</button></a>
-                            <a href="../index.html"><button>CONTINUE SHOPPING</button></a>
-                        </div> --> 
-
-                    <!-- <h1>TOTAL BREAKDOWN</h1>
-
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th colspan="4">ORDER SUBTOTAL</th>
-                                <th>1000</th>
-                            </tr>
-                            <tr>
-                                <th colspan="4">DISCOUNT</th>
-                                <th>0</th>
-                            </tr>
-                            <tr>
-                                <th colspan="4">SHIPPING</th>
-                                <th>FREE</th>
-                            </tr>
-                            <tr>
-                                <th colspan="4">
-                                    <h1>YOU PAY</h1>
-                                    
-                                </th>
-                                <th><h1>1000</h1></th>
-
-
-                            </tr>
-                            <tr><th><h3>INCLUSIVE OF ALL TAXES*</h3></th></tr>
-
-                        </tbody>
-                    </table> -->
+                            
 
                     <button onclick="gotoPayment()" id = "con_pay">CONTINUE TO PAYMENT</button>
 
@@ -637,7 +489,7 @@ margin: 10px 0;
     let billie = document.getElementById("billie");
     
 
-/*
+
     let user = JSON.parse(localStorage.getItem("user"));
     
     name_ch.textContent = "Mr." + " " + user.name;
@@ -645,7 +497,7 @@ margin: 10px 0;
     email_ch.textContent = user.email;
     username_ch.textContent = user.username;
     billie.textContent = user.email;
-*/
+
     function infoDone(){
         let count_mark = document.getElementById('2nd_count_mark');
         
@@ -679,17 +531,17 @@ margin: 10px 0;
     }
 
 
+
     function showItems() {
-        let count = document.getElementById('count')
-        let cart = JSON.parse(localStorage.getItem("cart"))
-        let parent = document.getElementById('parent')
   // recover data from local storage having name cart
    
+  let cart = JSON.parse(localStorage.getItem('prod_for_cart'))
+  let parent = document.getElementById('parent');
 
-  count.innerHTML = `CART : <span style="font-family : sans-serif">${cart.length}</span> ITEMS`
+//   count.innerHTML = `CART: ${cart.length} ITEMS`
 
 
-  cart.forEach(({name , price,image_url }) => {
+  cart.forEach(({name , newPrice,images }) => {
 //creating details container having image, name , price add other imp. stuff
     let main_div = document.createElement('div');
 
@@ -713,24 +565,23 @@ margin: 10px 0;
     code.innerHTML = `<b>511518JCZABA002EA005967</b>`
     
     let p_img = document.createElement('img')
-    p_img.src = image_url[0]
+    p_img.src = images[0]
     p_img.setAttribute('class','image')
 
     let p_weight = document.createElement('div')
-    let weight = Math.random()*50+10;
-    let fixed_decimal = Number.parseFloat(weight).toFixed(3)
-    p_weight.innerHTML = `Weight (g): ${fixed_decimal}`
+    p_weight.innerHTML = `Weight (g): ${Math.random()*5+1}`
 
    
 
-    let p = document.createElement('div')
-    p.setAttribute('class','price')
-    p.innerHTML = `<b>₹${price}</b>`
+    let price = document.createElement('div')
+    price.innerHTML = `<b>₹${newPrice}</b>`
 
     let total = document.createElement('div')
-    total.innerHTML = `<b>₹${price}</b>`
+    total.innerHTML = `<b>₹${newPrice}</b>`
 
     let remove_btn = document.createElement('button')
+    remove_btn.innerHTML = 'Remove'
+
     remove_btn.setAttribute('class','remove_btn')
     remove_btn.innerHTML = 'Remove'
     remove_btn.onmouseover = ()=>{
@@ -760,14 +611,11 @@ margin: 10px 0;
     parent.append(main_div);
   
 
-  })
+  });
+}
 
-      // let products = JSON.parse(localStorage.getItem("cart"));
-     
-
-  }
 let amount = JSON.parse(localStorage.getItem('total'));
-console.log('this is the amount',amount);
+console.log(amount);
 
 let amount_arr = document.querySelectorAll('.amount');
 
