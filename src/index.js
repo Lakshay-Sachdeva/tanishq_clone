@@ -8,6 +8,7 @@ const userController = require("./controllers/user.controller");
 const { register, login } = require("./controllers/auth.controller");
 const cartController = require("./controllers/cart.controller");
 
+const checkoutController = require("./controllers/checkout.controller")
 const singleController = require("./controllers/single_product.controller");
 
 //----------------  Models   ----------------------//
@@ -31,7 +32,7 @@ app.use("/login", login);
 app.use("/cart", cartController);
 
 app.use("/single", singleController);
-
+app.use("/checkout",checkoutController)
 app.get("/Tanishq", async (req, res) => {
 	res.render("index");
 });
