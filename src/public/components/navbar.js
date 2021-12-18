@@ -2,7 +2,7 @@ function navbar() {
 	return `<!-- mediaqeury -->
     <div id = "mediaQ">
         <div id='nav-m-top'>
-            <div id = "brand_curr">
+            <div id = "nav-left">
                 <p>BRANDS</p>
                 <p id = "curren">MY ACCOUNT</p>
                 <a href="../html/cart.html"><p id = "cart-page">CART</p></a>
@@ -76,50 +76,49 @@ function navbar() {
     </div>
 
     <!-- without_mediaquery -->
-<div id = "page_layout">
-    <div id = "sel_curr">
-        <p>SELECT A CURRENCY</p>
-        <div>
-            <button id = "inr">INR ₹</button>
-            <button id = "usd">USD $</button>
+    <div id = "page_layout">
+
+        <div id = "sel_curr">
+            <p>SELECT A CURRENCY</p>
+            <div>
+                <button id = "inr">INR ₹</button>
+                <button id = "usd">USD $</button>
+            </div>
         </div>
-    </div>
-    <div id = "three_div">
-        <div id = "three_butt">
-            <button>18 KT GOLD RATE 1GM = ₹3820.08</button>
-            <button>22 KT GOLD RATE 1GM = ₹4669.00</button>
-            <button>24 KT GOLD RATE 1GM = ₹5093.41</button>
+
+        <div id = "three_div">
+            <div id = "three_butt">
+                <button>18 KT GOLD RATE 1GM = ₹3820.08</button>
+                <button>22 KT GOLD RATE 1GM = ₹4669.00</button>
+                <button>24 KT GOLD RATE 1GM = ₹5093.41</button>
+            </div>
         </div>
-    </div>
     
 
-    <div id='navv'>
-        <div id = "brand_curr">
+    <div id='nav'>
+        <div id = "nav-left">
             <p>BRANDS</p>
             <p id = "currency">CURRENCY SELECTOR</p>
             <p id = "gold_rate">GOLD RATE</p>
         </div>
         
-        <div>
+        <div id= "nav-right">
             <a href="http://127.0.0.1:2424/Tanishq/login" id = "user_l">LOGIN</a>
             <a href="#">ENCIRCLE</a>
             <a href="#">GOLDEN HARVEST</a>
             <a href="">BOOK AN APPOINTMENT</a>
             <a href="">WISHLIST</a>
-            <a href="http://127.0.0.1:2424/cart">CART</a>
+            <a href="http://127.0.0.1:2424/cart">CART(3)</a>
         </div>
     
     </div>
     
-    <div id="div2">
+    <div id="nav-bottom">
 
-    <a href="http://127.0.0.1:2424/Tanishq"><img id="logo" src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/cb53f671-01d0-449e-b18d-a4e61e6ffa0b/TanishqLogo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-cb53f671-01d0-449e-b18d-a4e61e6ffa0b-mC036IT" alt=""></a>
+        <a href="http://127.0.0.1:2424/Tanishq"><img id="logo" src="https://www.tanishq.co.in/wps/wcm/connect/tanishq/cb53f671-01d0-449e-b18d-a4e61e6ffa0b/TanishqLogo.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0RT10QIMVSTFU3006-cb53f671-01d0-449e-b18d-a4e61e6ffa0b-mC036IT" alt=""></a>
 
         <ul id="topnav2" class="top ulnav" >
-
-
             <div class="navbar">
-
                 <div class="dropdown">
                     <button class="dropbtn">ALL JEWELLERY</button>
                     <div class="dropdown-content">
@@ -155,14 +154,12 @@ function navbar() {
                                 <a href="#">50K</a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
 
 
             <div class="navbar">
-
                 <div class="dropdown">
                     <button class="dropbtn" >GOLD</button>
                     <div class="dropdown-content">
@@ -205,11 +202,7 @@ function navbar() {
                 </div>
             </div>
 
-
-
-
             <div class="navbar">
-
                 <div class="dropdown">
                     <button class="dropbtn" >DIAMOND
                     </button>
@@ -244,9 +237,6 @@ function navbar() {
                     </div>
                 </div>
             </div>
-
-
-
 
             <div class="navbar">
 
@@ -295,7 +285,6 @@ function navbar() {
                     </div>
                 </div>
             </div>
-
 
             <div class="navbar">
 
