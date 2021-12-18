@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema(
 		category: { type: String, required: true },
 		gender: { type: String, required: true },
 		occasion: { type: String, required: true },
-        purity: { type: String, required: true },
+		purity: { type: String, required: true },
 	},
 	{
 		versionKey: false,
