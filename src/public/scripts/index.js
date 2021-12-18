@@ -53,4 +53,22 @@ var myIndex = 0;
        document.getElementById('slide_num').textContent = "1 / 2"
     };
 
+
+    
+    const buttonRight_promises = document.getElementById('slideRight_promises');
+    const buttonLeft_promises = document.getElementById('slideLeft_promises');
+    let promises_count = 1;
+
+    buttonRight_promises.onclick = function() {
+      document.getElementById('category_img_promises').scrollLeft += 1190;
+      promises_count++;
+      console.log(promises_count)
+      document.getElementById('slide_num_promises').textContent = `${promises_count} / 4`
+   };
+   buttonLeft_promises.onclick = function() {
+      document.getElementById('category_img_promises').scrollLeft -= 1190;
+      promises_count--;
+      document.getElementById('slide_num_promises').textContent = `${promises_count} / 4`
+   };
+
     
