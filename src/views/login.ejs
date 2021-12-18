@@ -207,6 +207,7 @@
 
 	async function login() {
 		try {
+
 			let email = document.getElementById("email").value;
 			let password = document.getElementById("password").value;
 
@@ -216,8 +217,6 @@
 			};
 
 			cred = JSON.stringify(cred);
-
-			console.log(cred);
 
 			let res = await fetch(`http://127.0.0.1:2424/login`, {
 				method: "POST",
@@ -229,8 +228,32 @@
 
 			let response = await res.json();
 
-			console.log(response);
+			// console.log(response);
 			// --------  -----------//
+			if(response.token){
+				// console.log("SUCCESS");
+				let u_details = {
+					user : response.user,
+					token : response.token
+				}
+
+				let details = JSON.stringify(u_details);
+
+				localStorage.setItem("user" , details) ;
+
+				let cart = localStorage.getItem("cart");
+
+				if(!cart || cart.length === 0){
+					window.location.href = "http://127.0.0.1:2424/Tanishq" ;
+				}
+				if(cart){
+					window.location.href = "http://127.0.0.1:2424/checkout" ;
+				}
+
+			}
+			if(response.status == "failed"){
+				alert(response.message);
+			}
 		} catch (e) {
 			console.log(e);
 		}

@@ -99,7 +99,7 @@
     </div>
     
     <div id= "nav-right">
-        <a href="http://127.0.0.1:2424/Tanishq/login" id = "user_l">LOGIN</a>
+        <a onclick="login()" id = "user_l">LOGIN</a>
         <a href="#">ENCIRCLE</a>
         <a href="#">GOLDEN HARVEST</a>
         <a href="">BOOK AN APPOINTMENT</a>
@@ -477,3 +477,15 @@
 
 <script src="../../public/scripts/navTop.js"></script>
 <script src="../../public/scripts/navTop2.js"></script>
+<script>
+    function login(){
+        let check = localStorage.getItem("user") ;
+        if(check){
+            alert("Already Signed in")
+            return
+        }
+        else{
+            window.location.href = "http://127.0.0.1:2424/Tanishq/login"
+        }
+    }
+</script>

@@ -35,7 +35,6 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
 	try {
-		console.log(req.body);
 
 		let user = await User.findOne({ email: req.body.email });
 
@@ -56,6 +55,7 @@ const login = async (req, res) => {
 		const token = newToken(user);
 
 		return res.status(200).send({ user, token });
+		
 	} catch (e) {
 		return res.status(500).json({ status: "failed", message: e.message });
 	}
