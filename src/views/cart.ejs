@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>high</title>
+		<title>Cart</title>
 
 		<!-- <link rel="stylesheet" href="/styles/navbar.css">
     <link rel="stylesheet" href="/styles/footer.css"> -->
@@ -335,7 +335,7 @@
 								<table>
 									<tbody>
 										<tr>
-											<td>ORDER TOTAL (2 ITEMS)</td>
+											<td id="order_items"></td>
 											<td id="amt" class="bold"></td>
 										</tr>
 										<tr>
@@ -355,7 +355,7 @@
 								<div>INCLUSIVE OF ALL TAXES*</div>
 							</div>
 							<div id="checkout_btns">
-								<a href="ckeckout.html"
+								<a href="http://127.0.0.1:2424/checkout"
 									><button id="btn-1">PROCEED TO CHECKOUT</button></a
 								>
 								<a href="/index.html"
@@ -523,6 +523,9 @@ debouncing();
 
 			let final_amt = document.getElementById("final_amt");
 			final_amt.innerHTML = `₹${sum}`;
+
+			let order_items = document.getElementById("order_items")
+			order_items.innerHTML = `ORDER TOTAL (${cart.length} ITEMS)`
 
 			let checkout = document.getElementById("btn-1");
 			checkout.onclick = () => {
