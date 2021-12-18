@@ -1,6 +1,5 @@
-module.exports = function navbar(){
-
-    return `<!-- mediaqeury -->
+module.exports = function navbar() {
+	return `<!-- mediaqeury -->
     <div id = "mediaQ">
         <div id='nav-m-top'>
             <div id = "brand_curr">
@@ -529,6 +528,5 @@ module.exports = function navbar(){
             </div>
         </div>
     </div>
-</div>`
-}
-
+</div>`;
+};

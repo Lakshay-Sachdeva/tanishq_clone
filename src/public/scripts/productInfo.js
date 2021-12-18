@@ -1,70 +1,61 @@
-let ProductInfo = JSON.parse(localStorage.getItem("ProductInfo"))
-let clicked = ProductInfo[ProductInfo.length - 1]
+let ProductInfo = JSON.parse(localStorage.getItem("ProductInfo"));
+let clicked = ProductInfo[ProductInfo.length - 1];
 
-let Nam = document.getElementById("NAME")
-Nam.textContent = clicked.name
+let Nam = document.getElementById("NAME");
+Nam.textContent = clicked.name;
 
 let Img = document.getElementById("sofaimg");
-Img.src = clicked.img
+Img.src = clicked.img;
 
-let Price = document.getElementById("mrp")
-Price.textContent = +clicked.price
+let Price = document.getElementById("mrp");
+Price.textContent = +clicked.price;
 
-let brand = document.getElementById("BRAND")
-brand.textContent = clicked.brand
+let brand = document.getElementById("BRAND");
+brand.textContent = clicked.brand;
 
-let cutPrice = document.getElementById("cutprice")
-cutPrice.textContent = +clicked.cutPrice
+let cutPrice = document.getElementById("cutprice");
+cutPrice.textContent = +clicked.cutPrice;
 
-
-localStorage.setItem("ProductInfo", JSON.stringify(ProductInfo))
+localStorage.setItem("ProductInfo", JSON.stringify(ProductInfo));
 
 if (localStorage.getItem("Pf_cart") === null) {
-    localStorage.setItem("Pf_cart", JSON.stringify([]))
+	localStorage.setItem("Pf_cart", JSON.stringify([]));
 }
 
 function ADDTOCART() {
+	let productCart = JSON.parse(localStorage.getItem("Pf_cart"));
 
+	let Product_Name = document.getElementById("NAME");
 
-    let productCart = JSON.parse(localStorage.getItem("Pf_cart"))
+	let Image = document.getElementById("sofaimg");
 
-    let Product_Name = document.getElementById("NAME")
+	let Price = document.getElementById("mrp");
 
+	let brand = document.getElementById("BRAND");
+	let cutPrice = document.getElementById("cutprice");
 
-    let Image = document.getElementById("sofaimg")
+	let productDetails = {
+		brand: brand.textContent,
+		cutPrice: +cutPrice.textContent,
+		name: Product_Name.textContent,
+		img: Image.src,
+		price: +Price.textContent,
+	};
 
-    let Price = document.getElementById("mrp")
+	productCart.push(productDetails);
+	console.log(productCart);
 
-    let brand = document.getElementById("BRAND")
-    let cutPrice = document.getElementById("cutprice")
+	localStorage.setItem("Pf_cart", JSON.stringify(productCart));
 
+	console.log("products_cart:", productDetails);
 
+	alert("Added to Cart");
 
-    let productDetails = {
-        brand: brand.textContent,
-        cutPrice: +cutPrice.textContent,
-        name: Product_Name.textContent,
-        img: Image.src,
-        price: +Price.textContent,
-    }
+	console.log("products_cart:", productDetails);
 
+	let btn = document.getElementById("cart-btn");
+	btn.innerHTML = "GO TO CART";
 
-    productCart.push(productDetails)
-    console.log(productCart)
-
-
-
-    localStorage.setItem("Pf_cart", JSON.stringify(productCart));
-
-    console.log("products_cart:", productDetails)
-
-    alert("Added to Cart");
-
-    console.log("products_cart:", productDetails)
-
-    let btn = document.getElementById("cart-btn");
-    btn.innerHTML = "GO TO CART";
-    
-    let go = document.getElementById("go");
-    go.setAttribute("href","/cart")
+	let go = document.getElementById("go");
+	go.setAttribute("href", "/cart");
 }
