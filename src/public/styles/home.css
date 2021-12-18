@@ -1,13 +1,14 @@
-#layout{
-    
-    width: 100%;
-    margin-top: 100px;
-    /* border-bottom: 3px solid #f2f2f2; */
+body{ margin: 0px; }
+#layout { 
+    width: 100%; 
+    margin-top: 125px; 
+} 
+#start_vid {
+    width: 100%; 
+} 
+video{ 
+    object-fit: contain; 
 }
-#start_vid{
-    width: 100%;
-}
-
 /* #layout > div:nth-child(1){
     margin-top: 100px;
 } */

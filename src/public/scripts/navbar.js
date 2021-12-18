@@ -28,7 +28,10 @@ module.exports = function navbar(){
             <div id = "cell">
                 <h3>LIVE VIDEO CALL</h3>
             </div>
-            <div id = "cell">
+            <div id = diaqeury -->
+            <div id = "mediaQ">
+                <div id='nav-m-top'>
+                    <div id "cell">
                 <h3>CONNECT ON WHATSAPP</h3>
             </div>
             <div id = "cell">

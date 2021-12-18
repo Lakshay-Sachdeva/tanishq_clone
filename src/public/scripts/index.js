@@ -8,17 +8,17 @@
 // document.querySelector('nav').innerHTML = navbar()
 // document.querySelector('footer').innerHTML = footer();
 
-import navbar from '../components/navbar.js'
+// import navbar from '../components/navbar.js'
 
-    let navbar_section =  document.getElementById("navbar");
-    navbar_section.innerHTML = navbar();
+//     let navbar_section =  document.getElementById("navbar");
+//     navbar_section.innerHTML = navbar();
 
-// Adding  Footer --------------------------------------
+// // Adding  Footer --------------------------------------
 
-import footer from '../components/footer.js'
+// import footer from '../components/footer.js'
 
-let footer_section = document.getElementById("footer");
-footer_section.innerHTML = footer();
+// let footer_section = document.getElementById("footer");
+// footer_section.innerHTML = footer();
 
 // navTop();
 
