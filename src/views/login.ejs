@@ -211,22 +211,27 @@
 			let email = document.getElementById("email").value ;
 			let password = document.getElementById("password").value;
 
-			console.log(email , password);
+			let cred = {
+				email,
+				password
+			}
+
+			cred = JSON.stringify(cred);
+
+			console.log(cred);
 
 			let res = await fetch(`http://127.0.0.1:2424/login` , {
 				method:"POST",
-				body : JSON.stringify({
-					email ,
-					password
-				}),
-				header : {
-					"Content-Type":"application/json"
+				body : cred,
+				headers : {
+					'Content-Type': 'application/json'
 				}
 			}) 
 
 			let response = await res.json() ;
 
 			console.log(response);
+			// --------  -----------//
 
 
 
