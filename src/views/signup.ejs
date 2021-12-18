@@ -161,7 +161,7 @@
 			</div>
 			<div id="sign">
 				<div id="s">SIGNUP</div>
-				<div class = "form" id="signup-form">
+				<div class="form" id="signup-form">
 					<select id="gender" aria-placeholder="Title">
 						<option value="Mr">Mr</option>
 						<option value="MS">Ms</option>
@@ -249,46 +249,44 @@
 
 <script>
 	async function register() {
-
 		// e.preventDefault();
 
 		// get values for title, first name, last name, email, password, contact
 
-		let title = document.getElementById("gender").value ;
-		let f_name = document.getElementById("firstname").value ;
-		let l_name = document.getElementById("lastname").value ;
-		let email = document.getElementById("email").value ;
-		let password = document.getElementById("password").value ;
-		let contact = document.getElementById("number").value ;
-		let country_code = document.getElementById("code").value
+		let title = document.getElementById("gender").value;
+		let f_name = document.getElementById("firstname").value;
+		let l_name = document.getElementById("lastname").value;
+		let email = document.getElementById("email").value;
+		let password = document.getElementById("password").value;
+		let contact = document.getElementById("number").value;
+		let country_code = document.getElementById("code").value;
 
 		// store it as json object
 
 		let data = JSON.stringify({
-			title : title,
-			first_name : f_name,
-			last_name : l_name,
-			contact : `${country_code} ${contact}`,
-			email : email,
-			password : password 
-		}) ;
-
+			title: title,
+			first_name: f_name,
+			last_name: l_name,
+			contact: `${country_code} ${contact}`,
+			email: email,
+			password: password,
+		});
 
 		// console.log("data" , data );
 
 		// send post request
 
-		let res = await fetch( `http://127.0.0.1:2424/user/` , {
-			method : "POST",
-			body : data,
-			headers : {
-				'Content-Type': 'application/json'
-			}
-		})
+		let res = await fetch(`http://127.0.0.1:2424/user/`, {
+			method: "POST",
+			body: data,
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
 
-		let response = await res.json() ;
+		let response = await res.json();
 
-		if(response.token) alert("SUCCESS") ;
-		if(response.status == "failed") alert("FAILED") ;
+		if (response.token) alert("SUCCESS");
+		if (response.status == "failed") alert("FAILED");
 	}
 </script>

@@ -1,6 +1,5 @@
-function footer(){
-
-    return `<div id = "footer_layout">
+function footer() {
+	return `<div id = "footer_layout">
 
     <div id = "find_store">
         <h2>Find a Store Near You</h2>
@@ -77,7 +76,7 @@ function footer(){
             <p>© 2021 Titan Company Limited. All Rights Reserved.</p>
         </div>
     </div>
-</div>`
+</div>`;
 }
 
 module.exports = footer;
