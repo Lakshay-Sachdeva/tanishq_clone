@@ -139,61 +139,6 @@
 	</body>
 </html>
 
-<!-- <script>
-	function signin(event) {
-		event.preventDefault();
-
-		var signup_details = JSON.parse(localStorage.getItem("signup"));
-
-		var myform = document.getElementById("myForm");
-
-		var email = document.getElementById("email").value;
-		var password = document.getElementById("password").value;
-
-		signup_details.forEach(function (signup) {
-			if (email === signup.e_mail && password === signup.pass_word) {
-				alert("Logged in successfully");
-				window.location.href = "/Tanishq";
-				//break;
-			} else {
-				alert("Enter valid credetials");
-				//break;
-			}
-		});
-	}
-
-	let register = document.getElementById("register");
-	register.onclick=() => {
-		window.location.href = "http://127.0.0.1:2424/Tanishq/signup" ;
-	}
-
-	//var signup_details = JSON.parse(localStorage.getItem("signup"));
-
-	//function sub(details){
-	//details.preventDefault();
-
-	// document.getElementById("sun").onclick = (e)=> {
-	//     e.preventDefault();
-	//         for(let i = signup_details.length-1; i >=0 ; i--){
-
-	//             let email_id = document.getElementById("email").value;
-	//             let pass_word = document.getElementById("password").value;
-	//             if(email_id == signup_details[i].e_mail && pass_word == signup_details[i].pass_word){
-	//                 alert("you are correct");
-	//                 //window.location.href = "#"
-
-	//             }else {
-	//                 alert("Enter Your valid Credential");
-	//             }
-	//         }
-	// }
-	// for(let i=0; i<signup_details.length; i++){
-	//     //console.log(signup_details[i]);
-	//     for(let j=0; j)
-	// }
-	//}
-</script> -->
-
 <script>
 	let register = document.getElementById("register");
 	register.onclick = () => {
@@ -239,10 +184,13 @@
 				let cart = localStorage.getItem("cart");
 
 				if(!cart || cart.length === 0){
+
+					alert("Login Successful")
+
 					window.location.href = "http://127.0.0.1:2424/Tanishq" ;
 				}
 				if(cart){
-					window.location.href = "http://127.0.0.1:2424/checkout" ;
+					window.location.href = "http://127.0.0.1:2424/Tanishq/checkout" ;
 				}
 
 			}
