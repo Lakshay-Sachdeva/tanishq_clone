@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,7 +150,7 @@
             display: none; */
             /* border: 1px solid blue; */
         }
-        #disp2 > div{
+        #disp2 > tr{
             display: inline-block;
             /* border: 1px solid black; */
             width: 49%;
@@ -166,9 +167,6 @@
             font-family: Roboto, serif;
             font-size: 16px;
             font-weight: 500;
-        }
-        table th{
-            /* border:  1px solid black; */
         }
         #review_disp2{
             margin-left: 70px;
@@ -262,7 +260,6 @@
 }
 #parent > div {
 
-
 display: grid;
 grid-template-columns: 70% 20% 10%;
 margin : 10px;
@@ -333,6 +330,17 @@ margin: 10px 0;
     transition: transform .3s ease-in-out ;
     cursor: pointer;
 }
+#text-area {
+    display: none;
+}
+#edit{
+    width : 80px;
+    height : 40px;
+    background: black;
+    color: white;
+    border: 1px solid black;
+
+}
     </style>
 </head>
 <body>
@@ -367,18 +375,20 @@ margin: 10px 0;
                 
                         <h1>YOUR ADDRESS</h1>
                         <div>
-                            <p id = "username_ch">GAJANAN (DEFAULT)</p>
+                            <p id = "username_ch"></p>
                             </br>
-                            <p id = "name_ch">Mr. Gajanan Wattamwar</p>
-                            <p id = "mob_ch">+91 9156015117</p>
+                            <p id = "name-1"></p>
+                            <p id = "mob-1">+91 9156015117</p>
                             <p>1-21-1550, Nanded - 431605</p>
                             <p>MAHARASHTRA, India</p>
+                            <p id="add-1">add adress</p>
+                            <textarea id="text-area">add adress</textarea>
                             </br>
                             </br>
                             </br>
                             </br>
                             </br>
-                            <p>EDIT</p>
+                            <button onclick="addAddress()" id='edit'>Edit</button >
                         </div>
                     </div>
                     <div>&nbsp;</div>
@@ -390,20 +400,40 @@ margin: 10px 0;
                 </div>
                 
                 
-                    <div id = "disp2">
+                    <!-- <div id = "disp2">
                         <div>
                             <h3>CONTACT DETAILS</h3>
-                            <P id = "name_ch">Mr. Gajanan Wattamwar</P>
-                            <p id = "mob_ch">+91 9156015117</p>
-                            <p id = "email_ch">wattamwargaj@gmail.com</p>
+                            <P id = "name-2"></P>
+                            <p id = "mob-2"></p>
+                            <p id = "email"></p>
                         </div>
                         <div>
                             <h3>ADDRESS DETAILS</h3>
-                            <P>1-21-1550</P>
-                            <P>Nanded-431605</P>
-                            <p>MAHARASHTRA, India</p>
+                            <p id="add-2"></p>
                         </div>
-                    </div>
+
+                    </div> -->
+                    <table id = "disp2">
+                        <tr>
+                            <td style="width: 150px;">CONTACT DETAILS</td>
+                            <td></td>
+                            <td>ADDRESS DETAILS</td>
+                        </tr>
+                        <tr>
+                            <td id="name-2"></td>
+                            <td></td>
+                            <td id="add-2"></td>
+                        </tr>
+                        <tr>
+                            <td id='mob-2'></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="email"></td>
+                            <td></td>
+                        </tr>
+
+                    </table>
                 
                 
                 
@@ -507,7 +537,6 @@ margin: 10px 0;
                                 </th>
                                 <th><h1>1000</h1></th>
 
-
                             </tr>
                             <tr><th><h3>INCLUSIVE OF ALL TAXES*</h3></th></tr>
 
@@ -605,9 +634,6 @@ margin: 10px 0;
 
     
 
-
-
-
     let stage2 = document.getElementById("oncl");
     let disp1 = document.getElementById("disp1");
     let disp2 = document.getElementById("disp2");
@@ -658,12 +684,7 @@ margin: 10px 0;
 
         showItems();
 
-
-
-
     }
-
-
 
     function gotoPayment(){
         let count_mark = document.getElementById('3rd_count_mark');
@@ -678,7 +699,6 @@ margin: 10px 0;
         payment_disp2.style.display = 'block';
     }
 
-
     function showItems() {
         let count = document.getElementById('count')
         let cart = JSON.parse(localStorage.getItem("cart"))
@@ -687,7 +707,6 @@ margin: 10px 0;
    
 
   count.innerHTML = `CART : <span style="font-family : sans-serif">${cart.length}</span> ITEMS`
-
 
   cart.forEach(({name , price,image_url }) => {
 //creating details container having image, name , price add other imp. stuff
@@ -776,6 +795,51 @@ amount_arr.forEach( (el) => {
     el.innerText = '₹' + amount;
 })
 
+const showUser =()=>{
+    let {user : {title , first_name , last_name , contact,email}} = JSON.parse(localStorage.getItem("user"))
+    // console.log('user',title)
+
+    let billie = document.getElementById("billie")
+    billie.innerHTML = `${email}`
+
+    let email2 = document.getElementById("email")
+    email2.innerHTML = `${email}`
+
+    let name = document.getElementById("name-1")
+     name.innerHTML = `${title} ${first_name} ${last_name}`
+
+     let name2 = document.getElementById("name-2")
+     name2.innerText = `${title} ${first_name} ${last_name}`
+
+     let mob = document.getElementById("mob-1")
+     mob.innerHTML = `+${contact}`
+
+let mob2 = document.getElementById("mob-2")
+mob2.innerHTML = `+${contact}`
+}
+showUser()
+
+function addAddress(){
+    console.log("click")
+    let btn = document.getElementById("edit")
+    let text = document.getElementById("text-area")
+    let add = document.getElementById("add-1")
+
+    let add2 = document.getElementById("add-2")
+    let ans = document.getElementById("text-area").value
+    if (btn.innerHTML === "Edit"){
+        add.style.display = "none"
+        text.style.display = "block"
+        btn.innerHTML = "Save"
+
+    } else if ( btn.innerHTML === "Save"){
+        add.style.display = "block"
+        text.style.display = "none"
+      add.innerHTML = ans
+      add2.innerHTML = ans
+        btn.innerHTML = "Edit"
+    }
+}
 
 let order_btn = document.getElementById('pay_order');
 
@@ -783,3 +847,4 @@ order_btn.onclick = ()=>{
     window.location.href = 'congratulationpage.html';
 }
 </script>
+
