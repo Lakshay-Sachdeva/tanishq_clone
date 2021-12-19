@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Details</title>
+    <link rel="stylesheet" href="./styles/carddetails.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>  
+    #pay_ban{
+        width: 100;
+        height: 150px;
+        background-color: darkgoldenrod;
+        display: flex;
+    }
+    #pay_ban div{
+        padding: 40px 0 50px 60px;
+    }
+    #details{
+        margin-top: -25px;
+    }
+    #pay_ban h1{
+        color: white;
+        font-family: 'Playfair Display', serif;
+    }
+    #pay_ban h2{
+        color: white;
+        font-family: 'Playfair Display', serif;
+    }
+    #pay_ban img{
+        background-color: white;
+        border-radius: 12px;
+      
+    }
+        #main{
+        display: grid;
+        grid-template-columns: 300px 300px 300px;
+        grid-template-rows:350px;
+        /* border: 1px solid gold; */
+        gap: -10px;
+        margin-top: 50px;
+    }
+        #left{
+        margin-top: 100px;
+        margin-left: 100px;
+    
+    }
+    #right{
+        margin: auto;
+        margin-top: 100px;
+        /* margin-left: 50px; */
+        line-height: 15px;
+    }
+    #log,#reg{
+        font-family: Neue-Helvetica,Helvetica, Arial, sans-serif;
+    
+    }
+    p{
+        font-size: 10px;
+        font-family: Neue-Helvetica, Helvetica, Arial, sans-serif;
+    }
+    #reg,#log{
+        font-size: 20px;
+    }
+
+    table{
+        margin-left: auto;
+        margin-right: auto;
+        table-layout: fixed;
+        margin-top: -120px;
+    }
+    button{
+        width: 200px;
+        height: 30px;
+    }
+    #button_margin_right{
+        margin-left: 195px;
+        color: white;
+        background-color: black;
+        font-size: 8px;
+        cursor: pointer;
+    }
+    #button_margin_right:hover {
+        box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
+    }
+    #button_margin_left{
+        margin-left: 98px;
+        color: white;
+        background-color: black;
+        font-size: 8px;
+        cursor: pointer;
+    }
+    #button_margin_left:hover {
+        box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
+    }
+
+    input {
+        border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: groove;
+        background-color: white;
+        width: 100%;
+    } 
+    #input1:focus {
+        outline: none;
+    }
+    #input2:focus {
+        outline: none;
+    }
+    select {
+        border-top-style: none;
+        border-left-style: none;
+        border-right-style: none;
+        border-bottom-width: 300%;
+        outline: none;
+        scroll-behavior: smooth;
+        font-family: Neue-Helvetica, Helvetica, Arial, sans-serif;
+        color: #535e62;
+        font-size: 10px;
+    }
+    .state-select{
+        width: 100%;
+    }
+    #sum{
+        display: grid;
+        grid-template-columns: 120px 35px;
+        grid-template-rows: 100px;
+        text-align: right;
+    }
+    #fixed{
+        display: grid;
+        grid-template-columns: 200px 200px;
+        grid-template-rows: 100px;
+        position: fixed;
+        margin-left: 800px;
+        bottom: -10px;
+    }
+    .btn_continue{
+        background-color: black;
+        color: white;
+        /* margin: 1000px; */
+        padding: 15px;
+        padding-left: 70px;
+        padding-right: 70px;
+        margin-bottom: -50px;
+
+    }
+    .btn_continue:hover {
+        box-shadow: inset 0 0 0 10em rgba(255, 255, 255, 0.3);
+    }
+    #payment{
+        position: fixed;
+        left: 100px;
+        width: 80px;
+        border: 1px solid gray;
+    }
+    </style>
+</head>
+<body>
+    <div>
+       <div id = "pay_ban">
+           <div><img src="https://i.ibb.co/TY2YCKZ/Tanishq-TLogo.webp" alt=""></div>
+            <div id = "details">
+                <h1>TANISHQ</h1>
+                <h2>Payment Done Towards Titan Company Limited</h2>
+            </div>
+        </div>
+       <div>&nbsp;</div>
+        <img id ="payment" src="https://static.zara.net/static/images/payment/payment/icon-payment-visa.svg" alt="">
+    <div id = "main">
+        <div id = "left">
+            <!-- <p id = "log">CARD NUMBER</p> -->
+            <div id = "enter_email"> </div>
+            <div><input type="text" placeholder="CARD NUMBER" id = "input1" onclick = "email()"></div>
+            <!-- <span class="material-icons-outlined">
+                info
+                </span>-->
+            <div id = "validation1"></div>
+            <div>&nbsp;</div>
+            <!-- <div id = "enter_password"> CARD HOLDER</div> -->
+            <div id = "enter_password"> </div>
+            <div><input type="text" placeholder="CARD HOLDER" id = "input2" onclick = "password()"></div>
+            <div id = "validation2"></div>
+            <!-- <button>LOG IN</button> -->
+        </div>
+
+
+
+        <div id = "left">
+            <!-- <p id = "log">LOG IN</p> -->
+            <div id = "enter_email"> </div>
+            <select name="state" class="state-select" >
+                <option value="">Month</option> 
+                <option value="">01</option> 
+                <option value="">02</option>
+                <option value="">03</option> 
+                <option value="">04</option> 
+                <option value="">05</option> 
+                <option value="">06</option> 
+                <option value="">07</option> 
+                <option value="">08</option> 
+                <option value="">09</option> 
+                <option value="">10</option> 
+                <option value="">11</option> 
+                <option value="">12</option> 
+            </select>
+            <div id = "validation1"></div>
+            <div>&nbsp;</div>
+            <div id = "enter_password"> </div>
+            <div><input type="text" placeholder="CVV" id = "input2" onclick = "password()"></div>
+            <div id = "validation2"></div>
+            <!-- <button>LOG IN</button> -->
+        </div>
+
+
+
+
+        <div id = "left">
+            <!-- <p id = "log">LOG IN</p> -->
+            <div id = "enter_email"> </div>
+            <select name="state" class="state-select" >
+                <option value="">Year</option> 
+                <option value="">2021</option> 
+                <option value="">2022</option>
+                <option value="">2023</option> 
+                <option value="">2024</option> 
+                <option value="">2025</option> 
+                <option value="">2026</option> 
+                <option value="">2027</option> 
+                <option value="">2028</option> 
+                <option value="">2029</option> 
+                <option value="">2030</option> 
+                <option value="">2031</option> 
+                <option value="">2032</option> 
+            </select>
+           
+            <div id = "validation1"></div>
+            
+           
+        </div>
+    </div>
+    <div id = "fixed">
+        <div id="sum">
+            
+            
+        </div>
+        <div class="d9">
+            <a class="btn_continue" style="text-decoration: none;" onclick="checkout()">CONTINUE</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    var num = 1;
+    var nump = 1;
+
+
+
+
+  function email(){
+        let input = document.getElementById("input1");
+    //console.log(input);
+    div2.textContent = "CARD NUMBER";
+    div1.textContent = "ENTER CREDENTIALS";
+    div1.style.fontSize = "10px"
+    input.placeholder = "";
+    //console.log(div1);
+    input2.placeholder = "CARD HOLDER"
+    div2.textContent = "";
+    let box = document.getElementById('enter_email');
+    //box.style.border = "solid";
+    
+    //console.log(box);
+
+    box.append(div1)
+
+
+    const isEmpty = str => !str.trim().length;
+    let div3 = document.createElement('div');
+    document.getElementById("input1").addEventListener("input", function() {
+    if( isEmpty(this.value) && num <= 2 ) {
+      
+        div3.textContent = "Email valid credentials";
+        div3.style.fontSize = "10px";
+        div3.style.width = "100px"
+        //div3.style.border = "solid";
+        div3.style.color = "red"
+        let val = document.getElementById("validation1");
+        val.append(div3);
+    }
+    else {
+        div3.remove();
+    }
+    //num++;
+    });
+    num++; 
+    // console.log(num);
+    }
+
+    
+
+    function password(){
+        let input = document.getElementById("input2");
+        //input.placeholder = null;
+    //console.log(input);
+    div1.textContent = "";
+    
+    div2.textContent = "ENTER CREDENTIALS";
+    input1.placeholder = "CARD NUMBER"
+    div2.style.fontSize = "10px";
+    input.placeholder = "";
+    //console.log(div2);
+    
+    let box = document.getElementById('enter_password');
+    //console.log(box);
+    
+    if(input1.value.length >= 0){
+        box.append(div2);
+    }
+
+    const isEmpty = str => !str.trim().length;
+    let div4 = document.createElement('div');
+    document.getElementById("input2").addEventListener("input", function() {
+    if( isEmpty(this.value) && nump <= 2 && this.value.length < 8) {
+        
+        div4.textContent = "Ennter valid Crendentials";
+        div4.style.fontSize = "10px"
+        div4.style.width = "100px"
+        div4.style.color = "red"
+        let val1 = document.getElementById("validation2");
+        val1.append(div4);
+    } else {
+        div4.remove();
+    }
+    });
+    nump++;
+    //console.log(nump)
+    }
+    let div1 = document.createElement("div");
+    let div2 = document.createElement("div");
+
+   
+    var totalvalue= JSON.parse( localStorage.getItem("totalvalue"));
+
+total.textContent= totalvalue[totalvalue.length-1];
+
+  function checkout(){
+      
+      localStorage.setItem("Zara_cart_dresses",JSON.stringify([]))
+      alert("Order Successfully Placed");
+      window.location.href="zarahome2.html"
+  }
+
+
+  var logindata=JSON.parse( localStorage.getItem("logindata"));
+var Name=logindata[logindata.length-1].name;
+console.log(Name)
+var putname=document.getElementById("loggin");
+putname.textContent=Name;
+
+</script>
