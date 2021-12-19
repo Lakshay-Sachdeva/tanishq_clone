@@ -52,15 +52,6 @@ function appendProducts(data) {
 		show.innerHTML = null;
 		default_show.style.display = "none";
 
-		// <div>
-		//                 <img src="https://staticimg.titan.co.in/Tanishq/Catalog/600212ZCDRBS00_1.jpg?impolicy=pqmed&imwidth=320" alt="">
-		//             </div>
-		//             <div>
-		//                 <p>25 gram 24 Karat Gold Biscuit</p>
-		//                 <p>600212ZCDRBS00</p>
-		//                 <p></p>
-		//             </div>
-
 		for (let i = 0; i < 3; i++) {
 			let product = data[i];
 

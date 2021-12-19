@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="https://www.tanishq.co.in/favicon.png" type="image/png">
-    <!-- <link rel="stylesheet" href="styles/navbar.css" type="text/css" media="screen"> -->
     <style>
       body{
         margin: 0px;
@@ -91,7 +90,7 @@
 #filter {
   width: 20%;
   margin-left: 10%;
-  padding: 0px 20px
+  padding: 0px 20px;
   text-align: right;
 }
 #filter h1 {
@@ -134,17 +133,11 @@ hr {
   font-size: 15px;
   cursor: no-drop;
 }
-#towtag {
-
-}
-#twotag1 {
- 
+#twotag1 { 
   width: 200px;
   display: flex;
   justify-content: space-between;
   font-size: 15px;
- /* border: 1px solid black; */
-  
 }
 #twotag1 p:nth-child(1) {
   
@@ -238,18 +231,6 @@ cursor: pointer;
 font-size: 16px;
 font-weight: 900;
 }
-/* body {
-  font-family: sans-serif;
-} */
-
-
-
-/* #grid-board :hover {
-  border: 2px solid black;
-
- 
-  
-} */
 #grid-board > img {
   vertical-align: middle;
     width: 215px;
@@ -262,8 +243,6 @@ font-weight: 900;
 
 #grid-board {
   margin-top: 50px;
-  /* border: 1px solid black;
-  height: 600px; */
   display: grid;
   justify-content: center;
   grid-template-columns: 27% 27% 27%;
@@ -873,10 +852,6 @@ a {
       <div id="grid-board">
           <% product.forEach(function(el){  %>
 
-            <!-- <%  el.onclick = ()=>{
-              windows.location.href = `http://127.0.0.1:2424/single/%{el._id}`
-            } %>  -->
-
           <div id= "proshow">
               <img src= <%= el.image_url[0] %> />
               <p> <%= el.name %> </p>
@@ -985,9 +960,4 @@ function view (sirf) {
   window.location.href = `http://127.0.0.1:2424/single/${sirf}`
 }
 
-
 </script>
-<!-- <script type="module" src="scripts/navTop.js"></script>
-<script type="module" src="scripts/navTop2.js"></script>
-<script type="module" src="scripts/deboucing.js"></script> -->
-

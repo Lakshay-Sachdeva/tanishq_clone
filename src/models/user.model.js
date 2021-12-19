@@ -17,17 +17,8 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.pre("save", function (next) {
-	// console.log(("this" , this.password));
 
 	if (!this.isModified("password")) return next();
-
-	// sync approach
-
-	// const hash = bcrypt.hashSync(this.password , 10);
-	// this.password = hash ;
-	// return next();
-
-	// async approach
 
 	bcrypt.hash(this.password, 10, (err, hash) => {
 		this.password = hash;

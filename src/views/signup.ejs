@@ -5,7 +5,6 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Signup</title>
-		<!-- <link rel="stylesheet" href="styles/signup.css" /> -->
 		<style>
 			#page {
 				display: flex;
@@ -22,10 +21,6 @@
 				display: flex;
 				flex-direction: column;
 			}
-			/*#form {
-        display: flex;
-        flex-direction: column;
-        }*/
 			#s {
 				text-align: center;
 				font-size: 20px;
@@ -91,65 +86,6 @@
 				color: white;
 				text-align: center;
 			}
-
-			/*#step1 , #step2, #step3, #step4,#step5{
-        display: flex;
-        flex-direction: row;
-        margin: 5% 5%;
-        width: 90%;
-        }
-        #step1 > select {
-        width: 25%;
-        height: 50px;
-        margin: 0% 3%;
-        background-color: whitesmoke;
-        }
-        #step1 > input {
-        width: 63%;
-        margin: 0% 3%;
-        background-color:whitesmoke;
-        }
-        #step2 > input {
-        margin: 0% 3%;
-        width: 94%;
-        height: 50px;
-        background-color: whitesmoke;
-        }
-        #step3 > select {
-        width: 25%;
-        height: 50px;
-        margin: 0% 3%;
-        background-color: whitesmoke;
-        }
-        #step3 > input {
-        margin: 0% 3%;
-        width: 94%;
-        height: 50px;
-        background-color: whitesmoke;
-        }
-        #step4 > input {
-        margin: 0% 3%;
-        width: 94%;
-        height: 50px;
-        background-color: whitesmoke;
-        }
-        #step5 > input {
-        margin: 0% 3%;
-        width: 94%;
-        height: 50px;
-        background-color: whitesmoke;
-        }
-        #step6{
-        margin: 0% 8%;
-        padding: 2% 0%;
-        }
-        #signup-.form > button {
-        width: 100%;
-        height: 50px;
-        background-color: black;
-        color: white;
-        text-align: center;
-        }*/
 		</style>
 	</head>
 	<body>
@@ -177,15 +113,6 @@
 					<input type="email" id="email" placeholder="EMAIL ID" />
 					<input type="password" id="password" placeholder="PASSWORD" />
 					<div id="ch">
-						<!-- <div>
-							<input type="checkbox" id="ch1" />Receive our newsletters and
-							special offers.
-						</div>
-						<div><input type="checkbox" id="ch1" />Get updates on.</div>
-						<div>
-							<input type="checkbox" id="ch1" />I agree to the Terms &
-							Conditions * and Privacy Policy.
-						</div> -->
 					</div>
 					<button onclick="register()" id="button">REGISTER</button>
 				</div>
@@ -194,63 +121,9 @@
 	</body>
 </html>
 
-<!-- <script>
-	/*function signup(e){
-    e.preventDefault();
-
-    let form = document.getElementById("signup-form");
-
-    var user_data = {
-
-        firstname : form.firstname.value,
-        lastname : form.lastname.value,
-        mobile : form.number.value,
-        email : form.email.value,
-        password : form.password.value,
-    };
-    console.log("user-data:",user_data);
-}*/
-
-	if (localStorage.getItem("signup") === null) {
-		localStorage.setItem("signup", JSON.stringify([]));
-	}
-
-	function reg(event) {
-		//event.preventDefault();
-
-		var firstname = document.getElementById("firstname").value;
-		//var lastname =  document.getElementById("lastname").value;
-		//var mobile = document.getElementById("number").value;
-		var email = document.getElementById("email").value;
-		var password = document.getElementById("password").value;
-
-		/*if(firstname !== "" && lastname !== "" && mobile !==""&& email!=="" && password !==""){
-        alert("login succesfully")
-    }else{
-        alert("login unsuccessfully");
-    }*/
-		let signup_details = JSON.parse(localStorage.getItem("signup"));
-
-		//signup_details.push(firstname);
-		//signup_details.push(email);
-		//signup_details.push(password);
-		var user_data = {
-			first_name: firstname,
-			e_mail: email,
-			pass_word: password,
-		};
-		signup_details.push(user_data);
-
-		localStorage.setItem("signup", JSON.stringify(signup_details));
-		console.log("signup", signup);
-		window.location.href = "loginpage.html";
-	}
-</script> -->
-
 <script>
 	async function register() {
-		// e.preventDefault();
-
+		
 		// get values for title, first name, last name, email, password, contact
 
 		let title = document.getElementById("gender").value;
@@ -271,8 +144,6 @@
 			email: email,
 			password: password,
 		});
-
-		// console.log("data" , data );
 
 		// send post request
 

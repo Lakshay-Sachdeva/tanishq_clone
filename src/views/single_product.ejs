@@ -236,42 +236,7 @@
 			const main_img = document.getElementById("main_img");
 			main_img.src = new_img[num];
 		};
-		/*
-    const add_to_cart = (id) => {
-        console.log("click")
-        const new_id = JSON.parse(id)
-        console.log(id)
-        console.log(new_id)
-
-
-
-        if (localStorage.getItem("cart") == null) {
-            // console.log("null")
-            localStorage.setItem("cart", JSON.stringify([]))
-        }
-        let cart = localStorage.getItem("cart")
-        let new_cart = JSON.parse(cart)
-
-        let flag = "no"
-        new_cart.forEach((product) => {
-            console.log("p", product)
-            if (product === new_id) {
-                flag = "yes"
-            }
-        })
-
-        if (flag === "yes") {
-            alert("already in cart")
-        }
-        else {
-
-            new_cart.push(new_id)
-
-            localStorage.setItem("cart", JSON.stringify(new_cart))
-            alert("product is added cart")
-        }
-
-*/
+		
 
 		//cart fxn
 		const add_to_cart = (product) => {

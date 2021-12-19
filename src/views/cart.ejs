@@ -5,17 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Cart</title>
-
-		<!-- <link rel="stylesheet" href="/styles/navbar.css">
-    <link rel="stylesheet" href="/styles/footer.css"> -->
-		<!-- <link rel="stylesheet" type="text/css" href="styles/cart.css" /> -->
 		<link rel="shortcut icon" href="https://www.tanishq.co.in/favicon.png" type="image/png"/>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"/>
 		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@200&display=swap" rel="stylesheet"/>
-		<!-- font-family: "Fira Sans", sans-serif; -->
 	</head>
 	<style>
 		#empty_cart {
@@ -43,25 +38,16 @@
 			display: flex;
 			flex-direction: column;
 		}
-		/* 123 */
 		button {
 			cursor: pointer;
 		}
-
 		#cart_main {
 			display: grid;
 			grid-template-columns: 64% 30%;
 			grid-gap: 3%;
 		}
-		/*
- position: sticky ;
-    top :10px;
-    position sticky is used for order summary div scroll inside cart main div 
-*/
 		#order_summray {
-			/* border : 2px dashed red; */
 			height: 500px;
-
 			position: sticky;
 			top: 0px;
 		}
@@ -77,9 +63,6 @@
 			display: grid;
 			grid-template-columns: 30% 50%;
 			grid-gap: 8%;
-			/* justify-content: left; */
-			/* width : 50%; */
-			/* border : 3px solid black !important; */
 		}
 		.image {
 			width: 160px;
@@ -94,26 +77,19 @@
 			color: black;
 			display: inline-block;
 			border: 1px solid black;
-			/* width : 15px;
- /*   height : 30px;  */
 			padding: 5px 10px;
-			/* padding-left : 10px; */
 			font-size: 18px;
 		}
 		.signs {
 			display: inline-block;
 			color: gray;
 			margin: 5px 10px;
-			/* border : 1px dashed black;   */
 			font-size: 30px;
 			cursor: pointer;
 		}
 		.signs:hover {
 			color: black;
 		}
-		/* .quan {
-    margin-top : 10px;
-} */
 		.name {
 			font-size: 18px;
 			font-weight: 800;
@@ -185,7 +161,6 @@
 		}
 		#input-box {
 			padding: 20px 12px 20px 0;
-			/* border : 1px dashed black ; */
 			display: flex;
 		}
 		#input-box > input {
@@ -226,7 +201,6 @@
 			font-weight: 700;
 		}
 		td {
-			/* border: 1px solid black; */
 			padding-bottom: 10px;
 		}
 		.font-size {
@@ -277,7 +251,6 @@
 			transition: transform 0.3s ease-in-out;
 		}
 	</style>
-	<!-- kartik -->
 	<body>
 		<nav><%- include('./partials/navbar'); %></nav>
 		<div id="cart_main_div">
@@ -341,12 +314,8 @@
 								<div>INCLUSIVE OF ALL TAXES*</div>
 							</div>
 							<div id="checkout_btns">
-								<a href="http://127.0.0.1:2424/checkout"
-									><button id="btn-1">PROCEED TO CHECKOUT</button></a
-								>
-								<a href="/index.html"
-									><button id="btn-2">CONTINUE SHOPPING</button></a
-								>
+								<button id="btn-1">PROCEED TO CHECKOUT</button>
+								<a href="http://127.0.0.1:2424/Tanishq/products"><button id="btn-2">CONTINUE SHOPPING</button></a>
 							</div>
 						</div>
 					</div>
@@ -356,51 +325,27 @@
 		<footer id = "footer"><%- include('./partials/footer'); %></footer>
 	</body>
 </html>
-<!-- <script type="module" src="scripts/cart.js"></script> -->
 <script type="module">
-	/*
-  import { navbar } from '../../public/components/navbar.js'
-import {footer} from '../../public/components/footer.js'
-import {navTop} from '../components/navTop.js'
-import {debouncing} from '../components/debouncing.js'
-
-// import {navTop2} from '../components/navTop2.js'
-
-document.querySelector('nav').innerHTML = navbar()
-document.querySelector('footer').innerHTML = footer();
-
-navTop();
-
-// navTop2();
-
-debouncing();
-*/
 
 	let count = document.getElementById("count");
 
 	let cart = JSON.parse(localStorage.getItem("cart"));
-	// console.log('cart:', cart)
 	let empty_cart = document.getElementById("empty_cart");
 	let parent = document.getElementById("parent");
 	let not_empty_cart = document.getElementById("not_empty_cart");
-	// console.log('kya h ye',localStorage.getItem("cart") )
 	if (localStorage.getItem("cart") == null) {
 		empty_cart.style.display = "block";
 		not_empty_cart.style.display = "none";
 		console.log("empty");
 	}
-	//   console.log(localStorage.getItem("cart"))
 	else if (localStorage.getItem("cart")) {
 		empty_cart.style.display = "none";
 		not_empty_cart.style.display = "block";
 
 		function showItems() {
-			// recover data from local storage having name cart
-
 			count.innerHTML = `CART : <span style="font-family : sans-serif">${cart.length}</span> ITEMS`;
 
 			cart.forEach(({ name, price, image_url }) => {
-				//creating details container having image, name , price add other imp. stuff
 				let main_div = document.createElement("div");
 
 				let img_div = document.createElement("div");
@@ -466,15 +411,11 @@ debouncing();
 
 				parent.append(main_div);
 			});
-
-			// let products = JSON.parse(localStorage.getItem("cart"));
 		}
 		showItems();
 
 		function removeItem(name, main_div, parent) {
 			let cart = JSON.parse(localStorage.getItem("cart"));
-
-			// console.log(name)
 			let arr = [];
 			for (let i = 0; i < cart.length; i++) {
 				if (cart[i].name != name) {
@@ -513,13 +454,25 @@ debouncing();
 			let order_items = document.getElementById("order_items")
 			order_items.innerHTML = `ORDER TOTAL (${cart.length} ITEMS)`
 
-			let checkout = document.getElementById("btn-1");
-			checkout.onclick = () => {
-				// console.log('12')
-				// console.log('sum:', sum)
-				localStorage.setItem("total", JSON.stringify(sum));
-			};
+			localStorage.setItem("total", JSON.stringify(sum));
+			
 		}
 		showTotal();
+
+		let checkout = document.getElementById("btn-1");
+			checkout.onclick = () => {
+
+				
+
+				let l_user = localStorage.getItem("user") ;
+
+				if(!l_user || l_user == null || l_user.length == 0){
+					window.location.href = "http://127.0.0.1:2424/Tanishq/login"
+				}
+				else{
+					window.location.href = "http://127.0.0.1:2424/checkout"
+				}
+				
+			};
 	}
 </script>

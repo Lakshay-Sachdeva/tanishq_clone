@@ -5,10 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>checkout</title>
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Raleway:wght@200&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="../css/cart.css" />
     <link rel="shortcut icon" href="https://www.tanishq.co.in/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -26,25 +22,20 @@
             border: none;
             border-bottom: 1px solid black;
             margin: 0 0 0 15px;
-            
         }
         #place_order h3 {
             font-family: 'Raleway', sans-serif;
             font-size: 12px;
-            /* font-weight: 900; */
             margin: 25px 0 0 65px;
             letter-spacing:1.5px;
         }
         #page_layout2{
             width: 95%;
             margin-left: 3%;
-           
-            
         }
         #signed{
             width: 88%;
             height: 85px;
-            /* border: 1px solid black; */
             display: grid;
             grid-template-columns: 50px 160px 500px;
             grid-template-rows: 60px;
@@ -89,8 +80,6 @@
         }
         #delivery{
             width: 88%;
-            
-            /* border: 1px solid black; */
             display: grid;
             grid-template-columns: 50px 550px;
             grid-template-rows: 60px;
@@ -140,18 +129,8 @@
             display: block;
         }
         
-        #disp2{
-            /* display: grid;
-            grid-template-rows: 40% 40%;
-            grid-template-rows: 150px;
-            border: 1px solid blue;
-            gap: 70px;
-            display: none; */
-            /* border: 1px solid blue; */
-        }
         #disp2 > tr{
             display: inline-block;
-            /* border: 1px solid black; */
             width: 49%;
         }
         #disp2{
@@ -173,8 +152,6 @@
         }
         #payment_disp1{
             width: 88%;
-            /* height: 85px; */
-            /* border: 1px solid black; */
             display: grid;
             grid-template-columns: 50px 700px 500px;
             grid-template-rows: 60px;
@@ -191,10 +168,7 @@
             text-align: left;
         }
         .img-width{
-            height: 25px;
-            /* vertical-align: center; */
-            /* height: 30px; */
-            
+            height: 25px;            
         }
         .border{
             border: 1px solid black;
@@ -210,7 +184,6 @@
             vertical-align: bottom;
         }
         #whatsapp-img{
-            /* width: 20px; */
             height: 18px;
 
         }
@@ -256,96 +229,87 @@
             margin-left: 150px;
         }
         #headings {
-    display: grid;
-    grid-template-columns: 70% 20% 10%; 
-    margin: 10px;
-}
-#parent > div {
+            display: grid;
+            grid-template-columns: 70% 20% 10%; 
+            margin: 10px;
+        }
+        #parent > div {
+            display: grid;
+            grid-template-columns: 70% 20% 10%;
+            margin : 10px;
+            border-top: 1px solid #DDDDDD;
+        }
+        #parent > div > div {
+            margin-top : 10px;
+        }
+        .image {
+            width : 160px ;
+        }
+        .name {
+            font-size : 18px;
+            font-weight : 800;
+            margin: 15px 0 5px 0;
+        }
+        .signs {
+            display : inline-block;
+            color : gray;
+            margin : 5px 10px ;
+            font-size: 30px;
+            cursor : pointer;
+        }
+        .signs:hover {
+            color : black;
+        }
+        .price {
+            font-size :18px ;
+            margin: 10px 0;
+        } 
+        .items_div{
+            display : grid;
+            grid-template-columns: 30% 50%;
+            grid-gap: 8%;
+        }
+        .quantity {
+            color: black;
+            display : inline-block;
+            border : 1px solid black;
+            padding: 5px 10px; 
+            font-size: 18px;
+        }
+        .remove_btn {
+            margin: 15px 20px ;
+            background: transparent;
+            font-family:  sans-serif;
+            font-size: 15px;
+            padding-bottom : 5px;
+            border: none;
+            border-bottom: 1px solid black;
+            cursor: pointer;
+        }
+        .remove_btn_hover {
+            margin: 15px 20px;
+            background: transparent;
+            font-family:  sans-serif;
+            font-size: 15px;
+            padding-bottom : 1px;
+            border: none;
+            border-bottom: 1px solid black;
+            transition: transform .3s ease-in-out ;
+            cursor: pointer;
+        }
+        #text-area {
+            margin-left: 10px;
+            display: none;
+        }
+        #edit{
+            width : 120px;
+            height : 40px;
+            margin-left: 10px;
+            background: black;
+            color: white;
+            border: 1px solid black;
 
-
-display: grid;
-grid-template-columns: 70% 20% 10%;
-margin : 10px;
-border-top: 1px solid #DDDDDD;
-}
-#parent > div > div {
-margin-top : 10px;
-}
-.image {
-width : 160px ;
-}
-.name {
-    font-size : 18px;
-    font-weight : 800;
-    margin: 15px 0 5px 0;
-}
-.signs {
-    display : inline-block;
-    color : gray;
-    margin : 5px 10px ;
-    /* border : 1px dashed black;   */
-    font-size: 30px;
-    cursor : pointer;
-}
-.signs:hover {
-    color : black;
-}
-.price {
-    font-size :18px ;
-margin: 10px 0;
-} 
-.items_div{
-    display : grid;
-    grid-template-columns: 30% 50%;
-    grid-gap: 8%;
-    /* justify-content: left; */
-    /* width : 50%; */
-    /* border : 3px solid black !important; */
-}
-.quantity {
-    color: black;
-    display : inline-block;
-    border : 1px solid black;
-     /* width : 15px;
- /*   height : 30px;  */
-    padding: 5px 10px; 
-    /* padding-left : 10px; */
-    font-size: 18px;
-}
-.remove_btn {
-    margin: 15px 20px ;
-    background: transparent;
-    font-family:  sans-serif;
-    font-size: 15px;
-    padding-bottom : 5px;
-    border: none;
-    border-bottom: 1px solid black;
-    cursor: pointer;
-}
-.remove_btn_hover {
-    margin: 15px 20px;
-    background: transparent;
-    font-family:  sans-serif;
-    font-size: 15px;
-    padding-bottom : 1px;
-    border: none;
-    border-bottom: 1px solid black;
-    transition: transform .3s ease-in-out ;
-    cursor: pointer;
-}
-#text-area {
-    margin-left: 10px;
-    display: none;
-}
-#edit{
-    width : 120px;
-    height : 40px;
-    margin-left: 10px;
-    background: black;
-    color: white;
-    border: 1px solid black;
-
-}
+        }
     </style>
 </head>
 <body>
@@ -384,8 +348,7 @@ margin: 10px 0;
                             </br>
                             <p id = "name-1"></p>
                             <p id = "mob-1"></p>
-                            <!-- <p>1-21-1550, Nanded - 431605</p> -->
-                            <!-- <p>MAHARASHTRA, India</p> -->
+                            
                             <p id="add-1"></p>
                             <textarea id="text-area" placeholder="Edit Address" rows="6"></textarea>
                             </br>
@@ -400,20 +363,6 @@ margin: 10px 0;
                     </div>
                 </div>
                 
-                
-                    <!-- <div id = "disp2">
-                        <div>
-                            <h3>CONTACT DETAILS</h3>
-                            <P id = "name-2"></P>
-                            <p id = "mob-2"></p>
-                            <p id = "email"></p>
-                        </div>
-                        <div>
-                            <h3>ADDRESS DETAILS</h3>
-                            <p id="add-2"></p>
-                        </div>
-
-                    </div> -->
                     <table id = "disp2">
                         <tr>
                             <td style="width: 150px;">CONTACT DETAILS</td>
@@ -433,90 +382,32 @@ margin: 10px 0;
                             <td id="email"></td>
                             <td></td>
                         </tr>
-
                     </table>
-                
-                
-                
-                   
             </div>
-
             <div id = "review">
                <div id='review_disp1'>
                     <div id = "3rd_count_mark" class='count_mark'>
                         3
                     </div>
-
                     <div>
                         <h2 onclick="">ORDER REVIEW</h2>
                     </div>
                </div>
-
                 <div id = "review_disp2">
                     <h3>Please review your order to ensure your details are correct.</h3>    
                     <h3>If you have reviewed your order, you can proceed to the next stage and make the payment.</h3>
-
                     <div id="not_empty_cart">
-                        <div id="count"></div>
-             
+                        <div id="count"></div>             
                         <div id="cart_main">
-
                             <div id="items_details">
-
                                  <div id="headings">
                                      <div>ITEM(S)</div>
                                     <div>QUANTITY</div>
                                     <div>TOTAL</div>
-                                </div>
-                          
+                                </div>                          
                                  <div id="parent"></div>
-                            </div>
-
-                            <!-- <div id="order_summray">
-                                <h2>Order Summary</h2>
-                                <div id="promocode_btns">
-                                    <button>ENTER VOUCHER CODE</button>
-                                    <button>VIEW PROMO CODES</button>
-                                </div>
-
-                                <div id="display_cont">
-                                    <div id="input-box">
-                                        <input type="text">
-                                        <button>APPLY</button>
-                                    </div> 
-
-                                     <table>
-                                            <tbody>
-                                            <tr>
-                                                    <td>ORDER TOTAL (2 ITEMS) </td>
-                                                    <td id="amt"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Discount</td>
-                                                    <td>₹0</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>SHIPPING </td>
-                                                    <td>FREE</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>YOU PAY</td>
-                                                    <td id='final_amt'></td>
-                                                </tr>
-                                     </tbody>
-                                 </table>
-
-                            <div>INCLUSIVE OF ALL TAXES*</div> -->
-             
+                            </div>                                         
                         </div>
-
-                        <!-- <div id="checkout_btns">
-                             a href="../ckeckout.html"><button>PROCEED TO CHECKOUT</button></a>
-                            <a href="../index.html"><button>CONTINUE SHOPPING</button></a>
-                        </div> --> 
-
-                    <!-- <h1>TOTAL BREAKDOWN</h1>
-
                     <table>
                         <tbody>
                             <tr>
@@ -533,26 +424,17 @@ margin: 10px 0;
                             </tr>
                             <tr>
                                 <th colspan="4">
-                                    <h1>YOU PAY</h1>
-                                    
+                                    <h1>YOU PAY</h1>                                    
                                 </th>
                                 <th><h1>1000</h1></th>
-
-
                             </tr>
                             <tr><th><h3>INCLUSIVE OF ALL TAXES*</h3></th></tr>
-
                         </tbody>
-                    </table> -->
-
+                    </table>
                     <button onclick="gotoPayment()" id = "con_pay">CONTINUE TO PAYMENT</button>
-
                 </div>
-                
-
             </div>
-            
-            
+
             <div id = "payment">
                 <div id="payment_disp1">
                     <div id = "4th_count_mark" class='count_mark'>
@@ -583,8 +465,6 @@ margin: 10px 0;
                                         
                                     </th>
                                     <th><h1 class='amount'>1000</h1></th>
-    
-    
                                 </tr>
                                 <tr><th><p>INCLUSIVE OF ALL TAXES*</p></th></tr>
                                 <tr><th><input type="checkbox"> Mobile Number * <span id='WhatsApp'><img id='whatsapp-img' src="https://www.bing.com/th?id=AMMS_dbf45ebd6b4bf7de1e499c0277c519ca&w=110&h=110&c=7&rs=1&qlt=80&pcl=f9f9f9&o=6&cdv=1&dpr=1.5&pid=16.1" alt=""> WhatsApp</span></th></tr>
@@ -634,20 +514,12 @@ margin: 10px 0;
 </html>
 <script>
 
-    
-
-
-
-
     let stage2 = document.getElementById("oncl");
     let disp1 = document.getElementById("disp1");
     let disp2 = document.getElementById("disp2");
     let payment_disp2 = document.getElementById('payment_disp2');
     let payment_info = document.getElementById('payment-info')
-    
 
-       
-    
     stage2.onclick = () =>{
         
         if(disp1.style.display== "block"){
@@ -667,40 +539,33 @@ margin: 10px 0;
     let review_disp2 = document.getElementById('review_disp2');
     let billie = document.getElementById("billie");
     
-
-/*
-    let user = JSON.parse(localStorage.getItem("user"));
-    
-    name_ch.textContent = "Mr." + " " + user.name;
-    mob_ch.textContent = user.mobile;
-    email_ch.textContent = user.email;
-    username_ch.textContent = user.username;
-    billie.textContent = user.email;
-*/
     function infoDone(){
-        let count_mark = document.getElementById('2nd_count_mark');
         
-        count_mark.innerHTML = "&#10003";
+        let test_add = document.getElementById('text-area').value ;
 
-        disp1.style.display = 'none';
-        disp2.style.display = 'inline-block';
+        console.log(test_add.length);
 
-        review_disp2.style.display = 'block';
+        if(test_add === undefined || test_add == null || test_add.length < 15){
+            alert("Please enter valid delivery address") ;
+        }
+        else{
+            let count_mark = document.getElementById('2nd_count_mark');
+        
+            count_mark.innerHTML = "&#10003";
 
-        showItems();
+            disp1.style.display = 'none';
+            disp2.style.display = 'inline-block';
 
+            review_disp2.style.display = 'block';
 
+            showItems();
 
-
+        }
     }
-
-
 
     function gotoPayment(){
         let count_mark = document.getElementById('3rd_count_mark');
-        count_mark.innerHTML= "&#10003;";
-
-        
+        count_mark.innerHTML= "&#10003;";      
 
         review_disp2.style.display = 'none';
 

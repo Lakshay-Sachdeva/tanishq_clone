@@ -296,14 +296,8 @@ a {
 #popu_grid1,
 #show {
 	display: grid;
-	/* width: 100%; */
 	grid-template-columns: 25% 70%;
-	/* grid-template-rows: 100px; */
-	/* border: 1px solid red; */
 }
-/* #popu_grid1 div:nth-child(1) img, #popu_grid1 div:nth-child(3) img, #popu_grid1 div:nth-child(5) img{
-            width: 100%;
-        } */
 #popu_grid1 img,
 #show img {
 	width: 100%;
@@ -357,18 +351,6 @@ a {
 		cursor: pointer;
 		flex-wrap: wrap;
 	}
-	/* #nav-left p:nth-child(1) {
-		text-align: left;
-		margin-left: -28%;
-	}
-	#nav-left p:nth-child(2) {
-		text-align: center;
-		margin-left: 5%;
-	}
-	#nav-left p:nth-child(3) {
-		text-align: right;
-		margin-right: -20%;
-	} */
 	#nav-m-bottom {
 		height: 60px;
 		border-bottom: 1px solid #5d5d5d;
@@ -416,59 +398,5 @@ a {
 		color: #1a1e1f;
 		letter-spacing: 2px;
 		font-weight: 700;
-	}
-	/* #cell h3 span{
-                margin-left: 80%;
-                margin-top: 5%;
-                font-size: 25px;
-                font-weight: 900;
-            } */
-	/* #search_div{
-                
-                width: 100%;
-                height: 500px;
-                display: none;
-            }
-            #search_div2{
-                width: 70%;
-                height: 100%;
-                margin: auto;
-            }
-            #search_div2 div:nth-child(1) {
-                display: grid;
-                grid-template-columns: 100% 4% 4%;
-                grid-template-rows: 60px;
-                justify-items:center;
-            }
-            #search_div2 div:nth-child(1) i{
-                margin-left: -131px;
-                margin-top: 20px;
-               
-                
-            }
-            #search_inp{
-                width: 100%;
-                height: 60px;
-                text-align: center;
-                background-color: #f6f6f6;
-                border: none;
-            }
-            #search_inp::placeholder{
-                font-size: 16px;
-                font-family: "Playfair Display";
-            }
-            #search_grid div:nth-child(1){
-                display: none;
-            }
-            #search_grid div:nth-child(2) p {
-                font-size: 18px;
-                font-family: "Playfair Display";
-            }
-            #popu_grid1, #show{
-                display: grid;
-                grid-template-columns: 25% 70%;
-            }
-            #popu_grid1  img, #show img{
-                width: 100%;
-            } */
+	}	
 }

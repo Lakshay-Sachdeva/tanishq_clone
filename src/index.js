@@ -13,9 +13,6 @@ const singleController = require("./controllers/single_product.controller");
 
 //----------------  Models   ----------------------//
 const Products = require("./models/product.model");
-
-const navbar = require("./public/scripts/navbar");
-
 const app = express();
 
 
