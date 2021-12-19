@@ -263,9 +263,7 @@
 				<div id="empty_cart">
 					<div>CART</div>
 					<div>YOUR CART IS EMPTY.</div>
-					<a href="../index.html"
-						><button id="empty-cart-btn">Continue Shopping</button></a
-					>
+					<a href="http://127.0.0.1:2424/Tanishq/products"><button id="empty-cart-btn">Continue Shopping</button></a>
 				</div>
 				<div id="not_empty_cart">
 					<div id="count"></div>
@@ -345,7 +343,7 @@
 		function showItems() {
 			count.innerHTML = `CART : <span style="font-family : sans-serif">${cart.length}</span> ITEMS`;
 
-			cart.forEach(({ name, price, image_url }) => {
+			cart.forEach(({ name, price, image_url , weight }) => {
 				let main_div = document.createElement("div");
 
 				let img_div = document.createElement("div");
@@ -371,9 +369,7 @@
 				p_img.setAttribute("class", "image");
 
 				let p_weight = document.createElement("div");
-				let weight = Math.random() * 50 + 10;
-				let fixed_decimal = Number.parseFloat(weight).toFixed(3);
-				p_weight.innerHTML = `Weight (g): ${fixed_decimal}`;
+				p_weight.innerHTML = `Weight (g): ${weight}`;
 
 				let p = document.createElement("div");
 				p.setAttribute("class", "price");

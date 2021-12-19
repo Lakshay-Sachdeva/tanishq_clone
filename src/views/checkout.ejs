@@ -412,7 +412,7 @@
                         <tbody>
                             <tr>
                                 <th colspan="4">ORDER SUBTOTAL</th>
-                                <th>1000</th>
+                                <th id="f_amount_1"></th>
                             </tr>
                             <tr>
                                 <th colspan="4">DISCOUNT</th>
@@ -426,7 +426,7 @@
                                 <th colspan="4">
                                     <h1>YOU PAY</h1>                                    
                                 </th>
-                                <th><h1>1000</h1></th>
+                                <th><h1 id="f_amount_2"></h1></th>
                             </tr>
                             <tr><th><h3>INCLUSIVE OF ALL TAXES*</h3></th></tr>
                         </tbody>
@@ -449,7 +449,7 @@
                             <tbody>
                                 <tr>
                                     <th colspan="4">ORDER SUBTOTAL</th>
-                                    <th class='amount'> 1000</th>
+                                    <th id='f_amount_3'></th>
                                 </tr>
                                 <tr>
                                     <th colspan="4">DISCOUNT</th>
@@ -464,7 +464,7 @@
                                         <h1>YOU PAY</h1>
                                         
                                     </th>
-                                    <th><h1 class='amount'>1000</h1></th>
+                                    <th><h1 id='f_amount_4'></h1></th>
                                 </tr>
                                 <tr><th><p>INCLUSIVE OF ALL TAXES*</p></th></tr>
                                 <tr><th><input type="checkbox"> Mobile Number * <span id='WhatsApp'><img id='whatsapp-img' src="https://www.bing.com/th?id=AMMS_dbf45ebd6b4bf7de1e499c0277c519ca&w=110&h=110&c=7&rs=1&qlt=80&pcl=f9f9f9&o=6&cdv=1&dpr=1.5&pid=16.1" alt=""> WhatsApp</span></th></tr>
@@ -584,9 +584,13 @@
 
   count.innerHTML = `CART : <span style="font-family : sans-serif">${cart.length}</span> ITEMS`
 
+  let f_price = 0;
 
-  cart.forEach(({name , price,image_url }) => {
-//creating details container having image, name , price add other imp. stuff
+  cart.forEach(({name , price, image_url , weight }) => {
+
+
+    f_price += Number(price) ;
+
     let main_div = document.createElement('div');
 
     let img_div = document.createElement('div');
@@ -613,11 +617,7 @@
     p_img.setAttribute('class','image')
 
     let p_weight = document.createElement('div')
-    let weight = Math.random()*50+10;
-    let fixed_decimal = Number.parseFloat(weight).toFixed(3)
-    p_weight.innerHTML = `Weight (g): ${fixed_decimal}`
-
-   
+    p_weight.innerHTML = `Weight (g): ${weight}`   
 
     let p = document.createElement('div')
     p.setAttribute('class','price')
@@ -658,19 +658,33 @@
 
   })
 
+  console.log(f_price)
+
+  let alpha = document.getElementById("f_amount_1");
+  alpha.innerText = f_price ;
+  
+  let beta = document.getElementById("f_amount_2");
+  beta.innerText = f_price ;
+
+  let charlie = document.getElementById("f_amount_3");
+  charlie.innerText = f_price ;
+
+  let delta = document.getElementById("f_amount_4");
+  delta.innerText = f_price ;
+
       // let products = JSON.parse(localStorage.getItem("cart"));
      
 
   }
-let amount = JSON.parse(localStorage.getItem('total'));
-console.log('this is the amount',amount);
+// let amount = JSON.parse(localStorage.getItem('total'));
+// console.log('this is the amount',amount);
 
-let amount_arr = document.querySelectorAll('.amount');
+// let amount_arr = document.querySelectorAll('.amount');
 
-amount_arr.forEach( (el) => {
-    console.log(el);
-    el.innerText = '₹' + amount;
-})
+// amount_arr.forEach( (el) => {
+//     console.log(el);
+//     el.innerText = '₹' + amount;
+// })
 
 
 
