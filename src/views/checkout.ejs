@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -149,7 +150,7 @@
             display: none; */
             /* border: 1px solid blue; */
         }
-        #disp2 > div{
+        #disp2 > tr{
             display: inline-block;
             /* border: 1px solid black; */
             width: 49%;
@@ -166,9 +167,6 @@
             font-family: Roboto, serif;
             font-size: 16px;
             font-weight: 500;
-        }
-        table th{
-            /* border:  1px solid black; */
         }
         #review_disp2{
             margin-left: 70px;
@@ -255,7 +253,96 @@
             color: white;
             margin-left: 150px;
         }
-      
+
+        #headings {
+    display: grid;
+    grid-template-columns: 70% 20% 10%; 
+    margin: 10px;
+}
+#parent > div {
+
+display: grid;
+grid-template-columns: 70% 20% 10%;
+margin : 10px;
+border-top: 1px solid #DDDDDD;
+}
+#parent > div > div {
+margin-top : 10px;
+}
+.image {
+width : 160px ;
+}
+.name {
+    font-size : 18px;
+    font-weight : 800;
+    margin: 15px 0 5px 0;
+}
+.signs {
+    display : inline-block;
+    color : gray;
+    margin : 5px 10px ;
+    /* border : 1px dashed black;   */
+    font-size: 30px;
+    cursor : pointer;
+}
+.signs:hover {
+    color : black;
+}
+.price {
+    font-size :18px ;
+margin: 10px 0;
+} 
+.items_div{
+    display : grid;
+    grid-template-columns: 30% 50%;
+    grid-gap: 8%;
+    /* justify-content: left; */
+    /* width : 50%; */
+    /* border : 3px solid black !important; */
+}
+.quantity {
+    color: black;
+    display : inline-block;
+    border : 1px solid black;
+     /* width : 15px;
+ /*   height : 30px;  */
+    padding: 5px 10px; 
+    /* padding-left : 10px; */
+    font-size: 18px;
+}
+.remove_btn {
+    margin: 15px 20px ;
+    background: transparent;
+    font-family:  sans-serif;
+    font-size: 15px;
+    padding-bottom : 5px;
+    border: none;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+.remove_btn_hover {
+    margin: 15px 20px;
+    background: transparent;
+    font-family:  sans-serif;
+    font-size: 15px;
+    padding-bottom : 1px;
+    border: none;
+    border-bottom: 1px solid black;
+    transition: transform .3s ease-in-out ;
+    cursor: pointer;
+}
+#text-area {
+    display: none;
+}
+#edit{
+    width : 80px;
+    height : 40px;
+    background: black;
+    color: white;
+    border: 1px solid black;
+
+}
+
     </style>
 </head>
 <body>
@@ -290,18 +377,20 @@
                 
                         <h1>YOUR ADDRESS</h1>
                         <div>
-                            <p id = "username_ch">GAJANAN (DEFAULT)</p>
+                            <p id = "username_ch"></p>
                             </br>
-                            <p id = "name_ch">Mr. Gajanan Wattamwar</p>
-                            <p id = "mob_ch">+91 9156015117</p>
+                            <p id = "name-1"></p>
+                            <p id = "mob-1">+91 9156015117</p>
                             <p>1-21-1550, Nanded - 431605</p>
                             <p>MAHARASHTRA, India</p>
+                            <p id="add-1">add adress</p>
+                            <textarea id="text-area">add adress</textarea>
                             </br>
                             </br>
                             </br>
                             </br>
                             </br>
-                            <p>EDIT</p>
+                            <button onclick="addAddress()" id='edit'>Edit</button >
                         </div>
                     </div>
                     <div>&nbsp;</div>
@@ -313,20 +402,40 @@
                 </div>
                 
                 
-                    <div id = "disp2">
+                    <!-- <div id = "disp2">
                         <div>
                             <h3>CONTACT DETAILS</h3>
-                            <P id = "name_ch">Mr. Gajanan Wattamwar</P>
-                            <p id = "mob_ch">+91 9156015117</p>
-                            <p id = "email_ch">wattamwargaj@gmail.com</p>
+                            <P id = "name-2"></P>
+                            <p id = "mob-2"></p>
+                            <p id = "email"></p>
                         </div>
                         <div>
                             <h3>ADDRESS DETAILS</h3>
-                            <P>1-21-1550</P>
-                            <P>Nanded-431605</P>
-                            <p>MAHARASHTRA, India</p>
+                            <p id="add-2"></p>
                         </div>
-                    </div>
+
+                    </div> -->
+                    <table id = "disp2">
+                        <tr>
+                            <td style="width: 150px;">CONTACT DETAILS</td>
+                            <td></td>
+                            <td>ADDRESS DETAILS</td>
+                        </tr>
+                        <tr>
+                            <td id="name-2"></td>
+                            <td></td>
+                            <td id="add-2"></td>
+                        </tr>
+                        <tr>
+                            <td id='mob-2'></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td id="email"></td>
+                            <td></td>
+                        </tr>
+
+                    </table>
                 
                 
                 
@@ -364,7 +473,79 @@
                                  <div id="parent"></div>
                             </div>
 
-                            
+
+                            <!-- <div id="order_summray">
+                                <h2>Order Summary</h2>
+                                <div id="promocode_btns">
+                                    <button>ENTER VOUCHER CODE</button>
+                                    <button>VIEW PROMO CODES</button>
+                                </div>
+
+                                <div id="display_cont">
+                                    <div id="input-box">
+                                        <input type="text">
+                                        <button>APPLY</button>
+                                    </div> 
+
+                                     <table>
+                                            <tbody>
+                                            <tr>
+                                                    <td>ORDER TOTAL (2 ITEMS) </td>
+                                                    <td id="amt"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Discount</td>
+                                                    <td>₹0</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>SHIPPING </td>
+                                                    <td>FREE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>YOU PAY</td>
+                                                    <td id='final_amt'></td>
+                                                </tr>
+                                     </tbody>
+                                 </table>
+
+                            <div>INCLUSIVE OF ALL TAXES*</div> -->
+             
+                        </div>
+
+                        <!-- <div id="checkout_btns">
+                             a href="../ckeckout.html"><button>PROCEED TO CHECKOUT</button></a>
+                            <a href="../index.html"><button>CONTINUE SHOPPING</button></a>
+                        </div> --> 
+
+                    <!-- <h1>TOTAL BREAKDOWN</h1>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th colspan="4">ORDER SUBTOTAL</th>
+                                <th>1000</th>
+                            </tr>
+                            <tr>
+                                <th colspan="4">DISCOUNT</th>
+                                <th>0</th>
+                            </tr>
+                            <tr>
+                                <th colspan="4">SHIPPING</th>
+                                <th>FREE</th>
+                            </tr>
+                            <tr>
+                                <th colspan="4">
+                                    <h1>YOU PAY</h1>
+                                    
+                                </th>
+                                <th><h1>1000</h1></th>
+
+                            </tr>
+                            <tr><th><h3>INCLUSIVE OF ALL TAXES*</h3></th></tr>
+
+                        </tbody>
+                    </table> -->
+
 
                     <button onclick="gotoPayment()" id = "con_pay">CONTINUE TO PAYMENT</button>
 
@@ -457,9 +638,6 @@
 
     
 
-
-
-
     let stage2 = document.getElementById("oncl");
     let disp1 = document.getElementById("disp1");
     let disp2 = document.getElementById("disp2");
@@ -510,12 +688,7 @@
 
         showItems();
 
-
-
-
     }
-
-
 
     function gotoPayment(){
         let count_mark = document.getElementById('3rd_count_mark');
@@ -530,8 +703,6 @@
         payment_disp2.style.display = 'block';
     }
 
-
-
     function showItems() {
   // recover data from local storage having name cart
    
@@ -541,7 +712,8 @@
 //   count.innerHTML = `CART: ${cart.length} ITEMS`
 
 
-  cart.forEach(({name , newPrice,images }) => {
+  cart.forEach(({name , price,image_url }) => {
+
 //creating details container having image, name , price add other imp. stuff
     let main_div = document.createElement('div');
 
@@ -624,6 +796,51 @@ amount_arr.forEach( (el) => {
     el.innerText = '₹' + amount;
 })
 
+const showUser =()=>{
+    let {user : {title , first_name , last_name , contact,email}} = JSON.parse(localStorage.getItem("user"))
+    // console.log('user',title)
+
+    let billie = document.getElementById("billie")
+    billie.innerHTML = `${email}`
+
+    let email2 = document.getElementById("email")
+    email2.innerHTML = `${email}`
+
+    let name = document.getElementById("name-1")
+     name.innerHTML = `${title} ${first_name} ${last_name}`
+
+     let name2 = document.getElementById("name-2")
+     name2.innerText = `${title} ${first_name} ${last_name}`
+
+     let mob = document.getElementById("mob-1")
+     mob.innerHTML = `+${contact}`
+
+let mob2 = document.getElementById("mob-2")
+mob2.innerHTML = `+${contact}`
+}
+showUser()
+
+function addAddress(){
+    console.log("click")
+    let btn = document.getElementById("edit")
+    let text = document.getElementById("text-area")
+    let add = document.getElementById("add-1")
+
+    let add2 = document.getElementById("add-2")
+    let ans = document.getElementById("text-area").value
+    if (btn.innerHTML === "Edit"){
+        add.style.display = "none"
+        text.style.display = "block"
+        btn.innerHTML = "Save"
+
+    } else if ( btn.innerHTML === "Save"){
+        add.style.display = "block"
+        text.style.display = "none"
+      add.innerHTML = ans
+      add2.innerHTML = ans
+        btn.innerHTML = "Edit"
+    }
+}
 
 let order_btn = document.getElementById('pay_order');
 
@@ -631,3 +848,4 @@ order_btn.onclick = ()=>{
     window.location.href = 'congratulationpage.html';
 }
 </script>
+
