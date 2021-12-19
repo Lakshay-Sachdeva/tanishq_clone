@@ -44,6 +44,10 @@ app.get("/Tanishq/signup", async (req, res) => {
 	res.render("signup.ejs");
 });
 
+app.get("/Tanishq/payment", async (req, res) => {
+	res.render("payment.ejs");
+});
+
 app.get("/Tanishq/products", async (req, res) => {
 	const product = await Products.find().lean().exec();
 	res.render("products", {
