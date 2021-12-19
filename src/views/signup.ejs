@@ -286,7 +286,10 @@
 
 		let response = await res.json();
 
-		if (response.token) alert("SUCCESS");
-		if (response.status == "failed") alert("FAILED");
+		if (response.token){
+			alert("Registration Successful") ;
+			window.location.href = "http://127.0.0.1:2424/Tanishq/login"
+		}
+		if (response.status == "failed") alert(response.message);
 	}
 </script>
