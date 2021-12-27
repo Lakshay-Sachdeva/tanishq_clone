@@ -18,7 +18,7 @@ app.set("views", "./src/views");
 app.use("/public" , express.static("./src/public"));
 
 
-app.use("/Tanishq" , tanishqController ) ;
+app.use("" , tanishqController ) ;
 
 app.use("/login" , login ) ;
 
