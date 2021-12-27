@@ -1,8 +1,9 @@
 const app = require("./index.js");
+require("dotenv").config();
 
 const connect = require("./configs/db");
 
-app.listen(80, async () => {
-	await connect();
-	console.log("Listening on port number 80");
+app.listen(process.env.PORT, async () => {
+  await connect();
+  console.log(`Server is live now.`);
 });
