@@ -147,7 +147,7 @@
 
 		// send post request
 
-		let res = await fetch(`http://127.0.0.1:2424/user/`, {
+		let res = await fetch(`/user`, {
 			method: "POST",
 			body: data,
 			headers: {
@@ -159,7 +159,7 @@
 
 		if (response.token){
 			alert("Registration Successful") ;
-			window.location.href = "http://127.0.0.1:2424/Tanishq/login"
+			window.location.href = "/login"
 		}
 		if (response.status == "failed") alert(response.message);
 	}

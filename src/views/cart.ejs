@@ -263,7 +263,7 @@
 				<div id="empty_cart">
 					<div>CART</div>
 					<div>YOUR CART IS EMPTY.</div>
-					<a href="http://127.0.0.1:2424/Tanishq/products"><button id="empty-cart-btn">Continue Shopping</button></a>
+					<a href="/products"><button id="empty-cart-btn">Continue Shopping</button></a>
 				</div>
 				<div id="not_empty_cart">
 					<div id="count"></div>
@@ -313,7 +313,7 @@
 							</div>
 							<div id="checkout_btns">
 								<button id="btn-1">PROCEED TO CHECKOUT</button>
-								<a href="http://127.0.0.1:2424/Tanishq/products"><button id="btn-2">CONTINUE SHOPPING</button></a>
+								<a href="/products"><button id="btn-2">CONTINUE SHOPPING</button></a>
 							</div>
 						</div>
 					</div>
@@ -463,10 +463,10 @@
 				let l_user = localStorage.getItem("user") ;
 
 				if(!l_user || l_user == null || l_user.length == 0){
-					window.location.href = "http://127.0.0.1:2424/Tanishq/login"
+					window.location.href = "/login"
 				}
 				else{
-					window.location.href = "http://127.0.0.1:2424/Tanishq/checkout"
+					window.location.href = "/checkout"
 				}
 				
 			};
