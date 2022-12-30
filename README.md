@@ -1,4 +1,4 @@
-# **[Tanishq Back-End Project](https://tanishq-clone.herokuapp.com/)** 
+# **[Tanishq Back-End Project](https://tanishqclone-production.up.railway.app/)** 
 ---
 
 ---
